@@ -1,0 +1,12 @@
+lang: hu-HU
+exception:
+  invalid_credentials:
+    message: Hibás felhasználónév vagy jelszó!
+  password_mismatch:
+    message: A két jelszó nem egyezik meg!
+  password_validation:
+    message: A jelszónak legalább 6 karakterből kell állnia, tartalmaznia kell egy kis- és nagybetűt, illetve számot!
+  username_validation:
+    message: A felhasználónévnek legalább 4 karakterből kell állnia, nem lehet hoszabb 30 karakternél, csak betüket, számokat, aláhúzást és kötőjelet tartalmazhat!
+  user_exists:
+    message: Ez a felhasználónév már foglalt!
