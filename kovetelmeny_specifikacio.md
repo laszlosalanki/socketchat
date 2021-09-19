@@ -7,7 +7,7 @@ Követelmény specifikáció
 
 2. Vágyálomrendszer
 
-    A project célja egy olyan egyszerű webes chat felület készítése HTML - CSS - NestJS - socket.io alapokon, amely e-mail használatához e-mail címre nem, csupán felhasználónévre és jelszóra van szükség. Az egyszerű design, valamint a felesleges funkcionalitás elhagyása egy gyorsabb, lényegretörőbb rendszerért.
+    A project célja egy olyan egyszerű webes chat felület készítése HTML - CSS - NestJS - socket.io alapokon, amely használatához e-mail címre nem, csupán felhasználónévre és jelszóra van szükség. Az egyszerű design, valamint a felesleges funkcionalitás elhagyása egy gyorsabb, lényegretörőbb rendszerért.
 
 3. Jelenlegi üzleti folyamatok modellje.
 
