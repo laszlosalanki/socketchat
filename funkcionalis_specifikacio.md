@@ -9,6 +9,38 @@ Funkcionális specifikáció
 
     A SocketChat egy egyszerű, broadcast alapú, webes, valós idejű chat applikáció lesz. A felhasználót egy regisztrációs/bejelentkezési felület fogadja majd. Amennyiben korábban regisztrált (felhasználónév, jelszó) már az oldalon, akkor a belépést, ha nem, akkor pedig a bejelentkezést követően a szoftver át fogja irányítani a chat felületre. Itt megtekinthetőek lesznek az üzenetek és a felhasználók, a felület alján pedig a szövegbeviteli mező és a küldés gomb.
 
+4. Jelenlegi üzleti folyamatok modellje.
+
+    Napjainkban már mindenki a fejlett és híres chat alkalmazásokat használja, mint például Facebook Messenger, WhatsApp, Discord amelyek sok más funkciókkal is rendelkeznek a chatelelésen kívűl. Egy vállalati környezeten belül tárgyalt információkat az ott dolgozó embereknek nem biztos, hogy biztonságos egy ilyen nyílt felületen megosztani egymás között valamint nem is biztos, hogy szükséges egy ennyire összetett felületet használni. Erre lehet jó egy egyszerű belső kommunikációra képes webalkalmazás.
+
+5. Igényelt üzleti folyamatok modellje.
+
+    Ez a webalkalmazás egy lehetőség arra, hogy bárki fel tudja használni információ közlés céljából, magán célokra és minimális vagy akár valótlan adatok megadásával.
+
+7. Használati esetek
+
+    A felhasználó az alábbi tevékenységeket végezheti:
+        -Az oldalra regisztrálhat(Register) egy új felhasználónév és egy jelszó megadásával (register gomb).
+        -Az oldalra bejelentkezhet(Login) egy már regisztrált felhasználónév és jelszó párossal (login gomb).
+        -Regisztrálást követően a regisztrált felhasználóval be kell jelentkezni a chateléshez (login).
+        -Bejelentkezést követően lehetőség van a kijelentkezésre (kijelentkezés gomb), ekkor a bejelentkezéshez lesz irányítva a felhasználó.
+        -Bejelentkezést követően lehetőség van üzenetet írni az üzenet dobozra kattintva valamint küldésre a (Send gomb) lenyomásával.
+        -A felhasználónak lehetősége van megtekinteni a jelenleg aktív felhasználókat.
+        -A felhasználónak lehetősége van megtekinteni ki csatlakozott be/ki a beszélgetésbe.
+
+
 11. Funkció – követelmény megfeleltetés
 
     A regisztrációhoz és bejelentkezéshez egy közös HTML (+CSS) lap készül, itt egy kattintással dönthet majd a felhasználó, hogy melyiket kívánja használni. A felhasználónévre és jelszóra vonatkozó megszorítások megsértéséről egy - a regisztrációs/bejelentkezési blokk alatt megjelenő - üzenet fogja informálni a felhasználót (ahogy a regisztráció sikerességéről is). HTML (+CSS) lap készül az üzenetek megjelenítésére is, itt lesz lehetőség üzenetet küldeni és megtekinteni, valamint listázni az elérhető felhasználókat.
+
+12. Fogalomszótár
+
+    Regisztráció: Az a folyamat, mely során a felhasználó adatai megadásával új fiókot tud létrehozni.
+
+    Bejelentkezés: Az a folyamat, mely során a felhasználó be tud lépni adataival a saját fiókjába, amit előzőleg létrehozott.
+
+    Kijelentkezés: Az a folyamat, mely során a felhasználó ki tud lépni a saját fiókjából, majd visszakerül a bejelentkezéshez.
+
+    Üzenet: A közlendő információ.
+
+    Üzenet küldés: A közlendő információ publikálása.
