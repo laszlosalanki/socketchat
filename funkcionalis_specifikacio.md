@@ -27,7 +27,20 @@ Funkcionális specifikáció
         -Bejelentkezést követően lehetőség van üzenetet írni az üzenet dobozra kattintva valamint küldésre a (Send gomb) lenyomásával.
         -A felhasználónak lehetősége van megtekinteni a jelenleg aktív felhasználókat.
         -A felhasználónak lehetősége van megtekinteni ki csatlakozott be/ki a beszélgetésbe.
+        
+9. Képernyő tervek
+    
+    Egy olyan webes chat applikáció, ahól valós időben látjuk a résztvevők üzeneteit és neveit. Fontos része az applikációnak, hogy láthatóak legyenek az elérhető felhasználók, illetve ezeknek a megjelenítőknek változzon az állapota valós időben, amennyiben egy kliens csatlakozás, vagy kilépés történik.
 
+10. Forgató könyvek
+
+    Ha egy felhasználó meglátogatja a weboldalt, lehetősége van regisztrálni, vagy bejelentkezni.
+    Amennyiben a regisztrációt választja, megfelelő felhasználónév és jelszó választása után létrehozhatja a fiókját.
+    Amennyiben a felhasználó be szeretne jelentkezni, megfelelő felhasználónév és jelszó használatával ezt megteheti a bejelentkezési felületen.
+    Bejelentkezés után láthatóvá válik a chat felület, ahol tud kommunikálni (üzenetet küldeni) a többi, aktív felhasználóval.
+    Az új, bejelentkezett felhasználó aktív státusszal látható lesz a többi résztvevő számára.
+    Üzenet küldése után megjelenik minden fél számára az üzenet, szinte azonnal.
+    Kijelentkezésnél a felhasználó eltűnik az aktív felhasználók listjáról.
 
 11. Funkció – követelmény megfeleltetés
 
