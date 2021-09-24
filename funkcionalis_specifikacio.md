@@ -35,20 +35,23 @@ Funkcionális specifikáció
 8. Megfeleltetés
 
     Regisztráció:
-        - API és regisztrációs felület (registration form)
-        - Felhasználónév:
-            - Egyedinek kell lennie
-        - Jelszó:
-            - Minimum 6 karakteres, legalább 1 kis és nagy betüt kell tartalmaznia, illetve 1 számot.
+    - API és regisztrációs felület (registration form)
+    - Felhasználónév:
+        - Egyedinek kell lennie
+    - Jelszó:
+        - Minimum 6 karakteres, legalább 1 kis és nagy betüt kell tartalmaznia, illetve 1 számot.
+
     Bejelentkezés:
-        - API és bejelentkező felület (login form)
-        - Azonosítás tokenekkel történik, amelyek kijelentkezésig érvényesek.
+    - API és bejelentkező felület (login form)
+    - Azonosítás tokenekkel történik, amelyek kijelentkezésig érvényesek.
+
     Kilépés:
-        - Kilépés után a felhasználó nem látja ismét a kijelentkezés előtti állapotot (régebbi üzeneteket), nem tárolódnak adatbázisban.
-        - Kilépés után visszadobja a bejelentkező felületre a felhasználót.
+    - Kilépés után a felhasználó nem látja ismét a kijelentkezés előtti állapotot (régebbi üzeneteket), nem tárolódnak adatbázisban.
+    - Kilépés után visszadobja a bejelentkező felületre a felhasználót.
+
     Chat:
-        - API és felület
-        - Megjeleníti az aktív felhasználókat és üzeneteiket valós időben.
+    - API és felület
+    - Megjeleníti az aktív felhasználókat és üzeneteiket valós időben.
         
 9. Képernyő tervek
     
