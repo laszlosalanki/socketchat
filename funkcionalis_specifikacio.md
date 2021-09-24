@@ -16,6 +16,10 @@ Funkcionális specifikáció
 5. Igényelt üzleti folyamatok modellje.
 
     Ez a webalkalmazás egy lehetőség arra, hogy bárki fel tudja használni információ közlés céljából, magán célokra és minimális vagy akár valótlan adatok megadásával.
+    
+6. Követelmény lista
+
+    Szükséges lesz egy olyan oldalra, ahol a felhasználók tudnak fiókot létrehozni. Egy felhasználónév csak egyszer szerepeljen a rendszerben, tehát egyedinek kell lennie. A jelszónak is kellenének bizonyos megszorításokk, mint például minimális hossz, szükséges karakterek (kis -és nagybetü, szám). Figyelni kell arra, hogy ezeket az adatokat a szerver oldalon is érvényesítsük. A bizalmasabb információt, mint a jelszót titkosítva kell eltárolnunk. E-mail cím nem szükséges a felülethez. Belépés után a felhasználók tudjanak egymással valós időben kommunikálni, és lássák, hogy kik elérhetőek (felhasználónevüket). Az üzenetek ne kerüljenek tárolára adatbázisban, csak az adott munkamenetben lehessen látni a mások által, illetve a felhasználó maga által küldött üzeneteit. Kilépés után már csak a többi, még csatlakozott felhasználónak látszódjanak az üzenetek, amit a kijelentkezett felhasználó küldött, illetve az adott felhasználót dobja vissza egy bejelentkező, vagy regisztrációs felületre.
 
 7. Használati esetek
 
@@ -27,6 +31,24 @@ Funkcionális specifikáció
         -Bejelentkezést követően lehetőség van üzenetet írni az üzenet dobozra kattintva valamint küldésre a (Send gomb) lenyomásával.
         -A felhasználónak lehetősége van megtekinteni a jelenleg aktív felhasználókat.
         -A felhasználónak lehetősége van megtekinteni ki csatlakozott be/ki a beszélgetésbe.
+        
+8. Megfeleltetés
+
+    Regisztráció:
+        - API és regisztrációs felület (registration form)
+        - Felhasználónév:
+            - Egyedinek kell lennie
+        - Jelszó:
+            - Minimum 6 karakteres, legalább 1 kis és nagy betüt kell tartalmaznia, illetve 1 számot.
+    Bejelentkezés:
+        - API és bejelentkező felület (login form)
+        - Azonosítás tokenekkel történik, amelyek kijelentkezésig érvényesek.
+    Kilépés:
+        - Kilépés után a felhasználó nem látja ismét a kijelentkezés előtti állapotot (régebbi üzeneteket), nem tárolódnak adatbázisban.
+        - Kilépés után visszadobja a bejelentkező felületre a felhasználót.
+    Chat:
+        - API és felület
+        - Megjeleníti az aktív felhasználókat és üzeneteiket valós időben.
         
 9. Képernyő tervek
     
