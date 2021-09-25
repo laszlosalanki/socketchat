@@ -19,7 +19,13 @@ Funkcionális specifikáció
     
 6. Követelmény lista
 
-    Szükséges lesz egy olyan oldalra, ahol a felhasználók tudnak fiókot létrehozni. Egy felhasználónév csak egyszer szerepeljen a rendszerben, tehát egyedinek kell lennie. A jelszónak is kellenének bizonyos megszorításokk, mint például minimális hossz, szükséges karakterek (kis -és nagybetü, szám). Figyelni kell arra, hogy ezeket az adatokat a szerver oldalon is érvényesítsük. A bizalmasabb információt, mint a jelszót titkosítva kell eltárolnunk. E-mail cím nem szükséges a felülethez. Belépés után a felhasználók tudjanak egymással valós időben kommunikálni, és lássák, hogy kik elérhetőek (felhasználónevüket). Az üzenetek ne kerüljenek tárolára adatbázisban, csak az adott munkamenetben lehessen látni a mások által, illetve a felhasználó maga által küldött üzeneteit. Kilépés után már csak a többi, még csatlakozott felhasználónak látszódjanak az üzenetek, amit a kijelentkezett felhasználó küldött, illetve az adott felhasználót dobja vissza egy bejelentkező, vagy regisztrációs felületre.
+    1. Szükséges lesz egy olyan oldalra, ahol a felhasználók tudnak fiókot létrehozni. Ehhez egy regisztrációs API-t, illetve egy frontend oldalt kell tervezni.
+    2. Egy felhasználónév csak egyszer szerepeljen a rendszerben, tehát egyedinek kell lennie.
+    3. A jelszónak is kellenének bizonyos megszorításokk, mint például minimális hossz, szükséges karakterek (kis -és nagybetü, szám). Figyelni kell arra, hogy ezeket az adatokat a szerver oldalon is érvényesítsük.
+    4.  A bizalmasabb információt, mint a jelszót titkosítva kell eltárolnunk (nem visszafejthetően, hash-elve).
+    5.  Az üzenetek ne kerüljenek tárolára adatbázisban, csak az adott munkamenetben lehessen látni a mások által, illetve a felhasználó maga által küldött üzeneteit.
+    6.  Belépés után a felhasználók tudjanak egymással valós időben kommunikálni, és lássák, hogy kik elérhetőek (felhasználónevüket).
+    7.  Kilépés után már csak a többi, még csatlakozott felhasználónak látszódjanak az üzenetek, amit a kijelentkezett felhasználó küldött, illetve az adott felhasználót dobja vissza egy bejelentkező, vagy regisztrációs felületre.
 
 7. Használati esetek
 
