@@ -1,5 +1,12 @@
 Rendszerterv
 ---
+
+1. A rendszer célja
+
+    Számtalan webes, vagy applikációból használható valós idejű chat applikáció található manapság az interneten. Közös tulajdonságuk, hogy e-mail cím - jelszó kombinációval kell
+    legalább regisztrálnunk a használatukhoz, gyakran ez névvel, felhasználónévvel, nemmel, születési idővel és sok más adattal is kiegészül. A rendszer célja az ezen problémára megálmodott projekt megvalósítása, azaz egy egyszerű, letisztult, kevésbé megterhelő
+    böngészős alkalmazás fejlesztése, mely használatához elegendő egy felhasználónév és egy jelszó.
+
 2. Projektterv
   
   - Projekt vezető: Kántor Dániel
@@ -8,14 +15,14 @@ Rendszerterv
   
   - Felelősségi körök:
     
-    - Backend: Salánki László, Kántor Dániel
+    - Backend: Salánki László Balázs, Kántor Dániel
       - Szerepkör: 
         - API endpointok létrehozása
         - Adatbázis elkészítése
         - Autentikáció
         - Chat szerver
     
-    - Frontend: Csirka Dávid
+    - Frontend: Csirak Dávid
       - Szerepkör: 
         - Bejelntkező felület létrehozása
         - Regisztráció felület létrehozáa
@@ -38,6 +45,17 @@ Rendszerterv
 9. Adatbázis terv
 
     Az adatok (felhasználónév, jelszó) MongoDB (nosql) adatbázisban történik.
+
+10. Fizikai környezet
+
+    - A SocketChat egy webböngészőben használható applikáció, különösebb működést érintő követelmény nincs ezzel kapcsolatban. Platform-független, azaz bármilyen eszközről használható, amelyen a böngésző is (és van internet kapcsolat).
+    - Fejlesztői környezet:
+      - Visual Studio Code
+        - Live Server bővítmény
+      - IntelliJ WebStorm
+      - Google Chrome, Firefox 
+      
+      A felsorolt szoftverek vagy ingyenesek, vagy pedig a projekt megkezdése előtt is rendelkezésre álltak. 
 
 11. Tesztterv
 
