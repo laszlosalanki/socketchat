@@ -10,18 +10,18 @@
         <div class="form-box">
             <div class="button-box">
                 <div id="btn"></div>
-                <button type="button" class="toggle-btn" onclick="login()">Log In</button>
-                <button type="button" class="toggle-btn" onclick="register()">Register</button>
+                <button type="button" class="toggle-btn" onclick="loginPosition()">Log In</button>
+                <button type="button" class="toggle-btn" onclick="registerPosition()">Register</button>
             </div>
             <form id="login" class="input-group">
-                <input type="text" class="input-field" placeholder="Username" required>
-                <input type="text" class="input-field" placeholder="Enter password" required>
-                <button type="submit" class="submit-btn">Log in</button>
+                <input type="text" id="username-input" class="input-field" placeholder="Username" required>
+                <input type="password" id="password-input" class="input-field" placeholder="Enter password" required>
+                <button type="submit" class="submit-btn" onclick="login()">Log in</button>
             </form>
             <form id="register" class="input-group">
-                <input type="text" class="input-field" placeholder="Username" required>
-                <input type="text" class="input-field" placeholder="Enter password" required>
-                <input type="text" class="input-field" placeholder="Confirm password" required>
+                <input type="text" id="username-input-reg" class="input-field" placeholder="Username" required>
+                <input type="password" id="password-input-reg" class="input-field" placeholder="Enter password" required>
+                <input type="password" id="password-input2-reg" class="input-field" placeholder="Confirm password" required>
                 <button type="submit" class="submit-btn">Register</button>
             </form>
         </div>
@@ -32,17 +32,57 @@
         var y = document.getElementById("register");
         var z = document.getElementById("btn");
 
-        function register() {
+        function registerPosition() {
             x.style.left = "-400px";
             y.style.left = "50px";
             z.style.left = "110px";
         }
 
-        function login() {
+        function loginPosition() {
             x.style.left = "50px";
             y.style.left = "450px";
             z.style.left = "0px";
         }
+    </script>
+
+    <script>
+
+        async function login() {
+            let credentials = {
+            username: document.getElementById('username-input').text,
+            password: document.getElementById('password-input').text
+            };
+
+            let result = await fetch("/login", {
+                method: "POST", 
+                body: JSON.stringify(credentials)
+            });
+
+            if(result && result.status === 200) {
+                let token = result.json().token;
+                window.localStorage.setItem("token", token);
+                window.location.href = "chat.html";
+            } else {
+                let errorMessage = result.json().message;
+                alert(errorMessage);
+            }
+        }
+
+        async function register() {
+            let credentials = {
+            username: document.getElementById('username-input-reg').text,
+            password: document.getElementById('password-input-reg').text,
+            password2: document.getElementById('password-input2-reg').text
+            };
+
+            let result = await fetch("/register", {
+                method: "POST", 
+                body: JSON.stringify(credentials)
+            });
+
+
+        }
+
     </script>
 
 </body>

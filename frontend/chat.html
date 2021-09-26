@@ -14,6 +14,25 @@
     <form id="send-container">
         <input type="text" id="message-input">
         <button type="submit" id="send-button">Send</button>
+        <button id="logout-button" onclick="logout()">Log Out</button>
     </form>
+
+    <script>
+
+        async function logout() {
+            
+            let result = await fetch("/logout", {
+                method: "POST"
+            });
+
+            window.localStorage.removeItem("token");
+            window.location.href = "index.html";
+        }
+
+       /*if (!window.localStorage.getItem("token")) {
+           window.location.href = "index.html";
+       }*/
+
+    </script>
 </body>
 </html>
