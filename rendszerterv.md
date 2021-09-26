@@ -37,11 +37,11 @@ Rendszerterv
 
 9. Adatbázis terv
 
-  Az adatok (felhasználónév, jelszó) MongoDB (nosql) adatbázisban történik.
+    Az adatok (felhasználónév, jelszó) MongoDB (nosql) adatbázisban történik.
 
 11. Tesztterv
 
-  A fejlesztési folyamat során kiemelt szerepe volt a tesztelésnek. Mind a backend, mind a frontend részen fontos volt, hogy az adott funkció tökéletesen müködjön. Itt alkalmaztunk black box és white box tesztelést.
+    A fejlesztési folyamat során kiemelt szerepe volt a tesztelésnek. Mind a backend, mind a frontend részen fontos volt, hogy az adott funkció tökéletesen müködjön. Itt alkalmaztunk black box és white box tesztelést.
 
 13. Karbantartási terv
   
