@@ -4,6 +4,7 @@ import configuration from './config/configuration';
 import localizationConfiguration from './config/localization.configuration';
 import { MongoDbModule } from './database/mongodb.module';
 import { UserModule } from './user/user.module';
+import { ChatModule } from './chat/chat.module';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { UserModule } from './user/user.module';
     }),
     MongoDbModule,
     UserModule,
+    ChatModule,
   ],
   controllers: [],
 })

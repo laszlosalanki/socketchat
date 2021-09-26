@@ -20,6 +20,8 @@ export class ExceptionFilterImpl implements ExceptionFilter {
 
     if (!lang) lang = 'hu'; // default
 
+    console.log(exception);
+
     const langIndex = this.configService
       .get<Array<any>>('localization')
       .findIndex((elem) => elem.lang.split('-')[0] === lang.toLowerCase());
@@ -36,8 +38,8 @@ export class ExceptionFilterImpl implements ExceptionFilter {
       response
         .status(400)
         .json({
-          message: 'Invalid request',
-          statusCode: 400,
+          message: 'Internal server error',
+          statusCode: 500,
         })
         .end();
     }

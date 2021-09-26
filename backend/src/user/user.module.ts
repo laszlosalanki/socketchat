@@ -6,6 +6,7 @@ import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UserModel, UserSchema } from './models/user.schema';
 import { UserRepository } from './user.repository';
+import { AuthModule } from '../auth/auth.module';
 
 const userService = {
   useClass: UserServiceImpl,
@@ -19,6 +20,7 @@ const userRepository = {
 
 @Module({
   imports: [
+    AuthModule,
     ConfigModule,
     MongooseModule.forFeature([{ name: UserModel.name, schema: UserSchema }]),
   ],

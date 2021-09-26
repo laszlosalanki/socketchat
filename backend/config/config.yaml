@@ -9,3 +9,6 @@ database:
   username: root
   password: root
 
+jwt:
+  secret: ffc380d8c8a80cfee58441de02889c77
+  expiration: 30d

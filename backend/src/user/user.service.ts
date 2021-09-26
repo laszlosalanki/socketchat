@@ -18,8 +18,7 @@ export class UserServiceImpl implements UserService {
     if (await this.userRepository.exists({ username })) {
       throw new UserExistsException();
     }
-    console.log(await this.userRepository.exists({ username }));
-    console.log(await this.userRepository.find({}));
+
     const user = new UserModel();
     user.username = username;
     user.password = await UserServiceImpl.hash(password);

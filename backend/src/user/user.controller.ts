@@ -11,6 +11,8 @@ import { UserService } from './interfaces/user.service.interface';
 import { userSchema } from './schemas/user.schema';
 import { UserModel } from './models/user.schema';
 import { PasswordMismatchException } from '../exception/password-mismatch.exception';
+import { log } from 'util';
+import { AuthService } from '../auth/interfaces/auth.service.interface';
 
 interface RegistrationData {
   username: string;
@@ -23,11 +25,17 @@ interface LoginData {
   password: string;
 }
 
+interface LoginResult {
+  token: string;
+}
+
 @Controller()
 export class UserController {
   constructor(
     @Inject(TYPES.UserService)
     private readonly userService: UserService,
+    @Inject(TYPES.AuthService)
+    private readonly authService: AuthService,
   ) {}
 
   @Post('/register')
@@ -50,7 +58,14 @@ export class UserController {
 
   @Post('/login')
   @HttpCode(200)
-  private async login(@Body() loginData: LoginData): Promise<UserModel> {
-    return this.userService.getUser(loginData.username, loginData.password);
+  private async login(@Body() loginData: LoginData): Promise<LoginResult> {
+    const user = await this.userService.getUser(
+      loginData.username,
+      loginData.password,
+    );
+
+    return {
+      token: await this.authService.createAuthToken(user.username),
+    };
   }
 }
