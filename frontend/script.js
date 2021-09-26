@@ -1,6 +1,6 @@
 const socket = io('http://localhost:3000', {
   auth: {
-        token: window.localStorage.getItem("token")
+        token: window.sessionStorage.getItem("token")
       },
       cors: {
         origin: "http://localhost:3000",
@@ -31,8 +31,9 @@ messageForm.addEventListener('submit', e => {
     e.preventDefault()
     const message = messageInput.value
     appendMessage(`You: ${message}`)
-    socket.emit('send-chat-message', message)
-    messageInput = ''
+    socket.emit('message', message)
+  console.log(socket)
+    messageInput.value = ''
 })
 
 function appendMessage(message) {

@@ -13,17 +13,17 @@
                 <button type="button" class="toggle-btn" onclick="loginPosition()">Log In</button>
                 <button type="button" class="toggle-btn" onclick="registerPosition()">Register</button>
             </div>
-            <form id="login" class="input-group">
-                <input type="text" id="username-input" class="input-field" placeholder="Username" required>
-                <input type="password" id="password-input" class="input-field" placeholder="Enter password" required>
+            <div id="login" class="input-group">
+                <input type="text" id="username-input" class="input-field" placeholder="Username" required />
+                <input type="password" id="password-input" class="input-field" placeholder="Enter password" required />
                 <button type="submit" class="submit-btn" onclick="login()">Log in</button>
-            </form>
-            <form id="register" class="input-group">
-                <input type="text" id="username-input-reg" class="input-field" placeholder="Username" required>
-                <input type="password" id="password-input-reg" class="input-field" placeholder="Enter password" required>
-                <input type="password" id="password-input2-reg" class="input-field" placeholder="Confirm password" required>
-                <button type="submit" class="submit-btn">Register</button>
-            </form>
+            </div>
+            <div id="register" class="input-group">
+                <input type="text" id="username-input-reg" class="input-field" placeholder="Username" required />
+                <input type="password" id="password-input-reg" class="input-field" placeholder="Enter password" required />
+                <input type="password" id="password-input2-reg" class="input-field" placeholder="Confirm password" required />
+                <button class="submit-btn" onclick="register()">Register</button>
+            </div>
         </div>
     </div>
 
@@ -48,39 +48,58 @@
     <script>
 
         async function login() {
+
             let credentials = {
-            username: document.getElementById('username-input').text,
-            password: document.getElementById('password-input').text
+            username: document.getElementById('username-input').value,
+            password: document.getElementById('password-input').value
             };
 
-            let result = await fetch("/login", {
-                method: "POST", 
-                body: JSON.stringify(credentials)
+            let result = await fetch("http://localhost:3000/login?lang=hu", {
+                method: "POST",
+                body: JSON.stringify(credentials),
+                headers: {
+                    'content-type': 'application/json'
+                }
             });
 
-            if(result && result.status === 200) {
-                let token = result.json().token;
-                window.localStorage.setItem("token", token);
-                window.location.href = "chat.html";
+            let jsonResponse = await result.json();
+
+            if(result.status !== 200) {
+                const message = jsonResponse.message;
+                alert(message);
             } else {
-                let errorMessage = result.json().message;
-                alert(errorMessage);
+                let token = jsonResponse.token;
+                window.sessionStorage.setItem("token", token);
+                window.location.href = "chat.html";
             }
+
+
         }
 
         async function register() {
+
             let credentials = {
-            username: document.getElementById('username-input-reg').text,
-            password: document.getElementById('password-input-reg').text,
-            password2: document.getElementById('password-input2-reg').text
+                username: document.getElementById('username-input-reg').value,
+                password: document.getElementById('password-input-reg').value,
+                password2: document.getElementById('password-input2-reg').value
             };
 
-            let result = await fetch("/register", {
-                method: "POST", 
-                body: JSON.stringify(credentials)
+            let result = await fetch("http://localhost:3000/register?lang=hu", {
+                method: "POST",
+                body: JSON.stringify(credentials),
+                headers: {
+                    'content-type': 'application/json'
+                }
             });
 
-
+            if(result.status !== 201) {
+                let jsonResponse = await result.json();
+                const message = jsonResponse.message;
+                alert(message);
+            } else {
+                alert("Sikeres regisztráció!");
+                window.location.href = "index.html";
+            }
         }
 
     </script>

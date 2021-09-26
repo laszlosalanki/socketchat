@@ -25,6 +25,8 @@ export class AuthServiceImpl implements AuthService {
       token,
     };
 
+    this.tokens.set(username, token);
+
     return this.jwtService.signAsync(payload);
   }
 
@@ -33,17 +35,20 @@ export class AuthServiceImpl implements AuthService {
     this.tokens.delete(decoded.username);
   }
 
-  public async verifyAuthToken(token: string): Promise<boolean> {
+  public async verifyAuthToken(token: string): Promise<any> {
     try {
       const decoded = await this.jwtService.verifyAsync(token);
 
-      if (!this.tokens.has(decoded.username)) {
-        return Promise.resolve(false);
+      if (
+        !this.tokens.has(decoded.username) ||
+        this.tokens.get(decoded.username) === token
+      ) {
+        return Promise.resolve(null);
       }
 
-      return Promise.resolve(this.tokens.get(decoded.username) === token);
+      return Promise.resolve(decoded);
     } catch (error) {
-      return Promise.resolve(false);
+      return Promise.resolve(null);
     }
   }
 }

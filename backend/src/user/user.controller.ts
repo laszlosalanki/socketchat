@@ -68,4 +68,10 @@ export class UserController {
       token: await this.authService.createAuthToken(user.username),
     };
   }
+
+  @Post('/logout')
+  @HttpCode(200)
+  private async logout(@Body() data: any): Promise<any> {
+    await this.authService.invalidateAuthToken(data.token);
+  }
 }

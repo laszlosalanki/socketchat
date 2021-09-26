@@ -6,5 +6,4 @@ import { AuthModule } from '../auth/auth.module';
   imports: [AuthModule],
   providers: [EventsGateway],
 })
-
 export class EventsModule {}
