@@ -4,7 +4,7 @@ import configuration from './config/configuration';
 import localizationConfiguration from './config/localization.configuration';
 import { MongoDbModule } from './database/mongodb.module';
 import { UserModule } from './user/user.module';
-import { ChatModule } from './chat/chat.module';
+import { EventsModule } from './events/events.module';
 
 @Module({
   imports: [
@@ -13,7 +13,7 @@ import { ChatModule } from './chat/chat.module';
     }),
     MongoDbModule,
     UserModule,
-    ChatModule,
+    EventsModule,
   ],
   controllers: [],
 })
