@@ -22,7 +22,7 @@ Rendszerterv
         - Autentikáció
         - Chat szerver
     
-    - Frontend: Csirak Dávid
+    - Frontend: Csirák Dávid
       - Szerepkör: 
         - Bejelntkező felület létrehozása
         - Regisztráció felület létrehozáa
@@ -33,7 +33,7 @@ Rendszerterv
     1. Egy alap rendszer és önálló weboldal létrehozása ( összeköttetés nelkül )
     2. Az 1.0 -ás verzió elkészítése, kiadása
   
-5. Követelmények
+4. Követelmények
 
     - Felhasználói fiók létrehozása, azonosítása.
     - Egyedi felhasználónevek.
@@ -41,6 +41,21 @@ Rendszerterv
     - Bizalmas információk titkosítása (pl. jelszó).
     - Nem tárolódó üzenetek.
     - Kijelentkezés, visszairányítás egy bejelentkező oldalra.
+
+5. Funkcionális terv
+
+    Az applikáció az alábbi funkciókkal lesz ellátva:
+      - Bejelentkezés
+        - Felhasználónév - jelszó páros
+        - Bejelentkezéskor megjelenik a csatlakozó felhasználó neve a chat felületen
+      - Regisztráció
+        - Felhasználónév - jelszó - ismételt jelszó 
+      - Üzenet küldés
+        - Az elküldött üzenet a küldőnek illetve mindenki másnak is megjelenjen
+      - Kijelentkezés
+        - Kijelentkezéskor megjelenik a lecsatlakozó felhasználó neve a chat felületen
+      - Csatlakozott felhasználók listájának megtekinktése belépés után
+        - Folyamatos frissítést igényel
 
 9. Adatbázis terv
 
@@ -60,6 +75,10 @@ Rendszerterv
 11. Tesztterv
 
     A fejlesztési folyamat során kiemelt szerepe volt a tesztelésnek. Mind a backend, mind a frontend részen fontos volt, hogy az adott funkció tökéletesen müködjön. Itt alkalmaztunk black box és white box tesztelést.
+
+12. Telepítési terv
+
+    A rendszer nem igényel telepítést, böngészőből futtatható a SocketChat.
 
 13. Karbantartási terv
   
