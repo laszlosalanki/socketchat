@@ -4,6 +4,14 @@
     font-family: sans-serif;
 }
 
+h1 {
+    text-align: center;
+    font-size: 2cm;
+    font-family: 'Courier New', Courier, monospace;
+    color: #fff;
+    padding-top: 50px;
+}
+
 .hero {
     height: 100%;
     width: 100%;
