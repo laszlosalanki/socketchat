@@ -1,10 +1,10 @@
 import {
   Body,
-  Controller,
+  Controller, Get,
   HttpCode,
   Inject,
   Post,
-  Query,
+  Query, Render,
 } from '@nestjs/common';
 import { TYPES } from '../utilities/types';
 import { UserService } from './interfaces/user.service.interface';
@@ -74,4 +74,8 @@ export class UserController {
   private async logout(@Body() data: any): Promise<any> {
     await this.authService.invalidateAuthToken(data.token);
   }
+
+  @Get()
+  @Render('index')
+  private index(): void {}
 }
