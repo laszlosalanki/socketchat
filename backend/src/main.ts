@@ -11,7 +11,7 @@ async function bootstrap() {
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials: true,
   });
-  app.useStaticAssets(join(__dirname, '../../', 'frontend'));
+  app.useStaticAssets(join(__dirname, 'public'));
   app.setViewEngine('html');
   const configService = app.get<ConfigService>(ConfigService);
   app.useGlobalFilters(new ExceptionFilterImpl(configService));
