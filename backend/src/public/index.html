@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>SocketChat</title>
-    <link rel="stylesheet" href='index_style.css'>
+    <link rel="stylesheet" href="index_style.css">
 </head>
 <body>
     <div class="hero">
@@ -71,6 +71,7 @@
             } else {
                 let token = jsonResponse.token;
                 window.sessionStorage.setItem("token", token);
+                window.sessionStorage.setItem("name", credentials.username);
                 window.location.href = "chat.html";
             }
 
