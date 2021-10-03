@@ -24,12 +24,22 @@ export class EventsGateway implements OnGatewayConnection, OnGatewayDisconnect {
     private readonly authService: AuthService,
   ) {}
 
+  @SubscribeMessage('list_users')
+  private listUsers(
+    @MessageBody() data: string,
+    @ConnectedSocket() client: Socket,
+  ): Promise<WsResponse<any>> {
+    const users = new Array<string>();
+    this.server.of('/').sockets.forEach(socket => users.push(socket.handshake.auth.username));
+    client.emit('list_users', users);
+    return null;
+  }
+
   @SubscribeMessage('message')
   private receiveMessage(
     @MessageBody() data: string,
     @ConnectedSocket() client: Socket,
   ): Promise<WsResponse<any>> {
-    console.log(data);
     client.broadcast.emit('message', {
       from: client.handshake.auth.username,
       data,
@@ -39,6 +49,7 @@ export class EventsGateway implements OnGatewayConnection, OnGatewayDisconnect {
 
   public async handleConnection(client: Socket, ...args: any[]): Promise<any> {
     const token = client.handshake.auth.token;
+
     const user = await this.authService.verifyAuthToken(token);
     if (!user) {
       client.disconnect(true);
