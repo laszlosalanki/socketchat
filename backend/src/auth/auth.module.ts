@@ -22,7 +22,7 @@ const AuthService = {
         return {
           secret,
           signOptions: {
-            expiresIn: expiration,
+            expiresIn: '1d',
           },
         };
       },
