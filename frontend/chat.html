@@ -20,18 +20,25 @@
     <script>
 
         async function logout() {
-            
-            let result = await fetch("/logout", {
-                method: "POST"
+
+            await fetch("http://localhost:3000/logout", {
+                method: "POST",
+                body: JSON.stringify({
+                    token: window.sessionStorage.getItem("token")
+                }),
+                headers: {
+                    'content-type': 'application/json'
+                }
             });
 
-            window.localStorage.removeItem("token");
+            window.sessionStorage.removeItem("token");
             window.location.href = "index.html";
         }
 
-       /*if (!window.localStorage.getItem("token")) {
-           window.location.href = "index.html";
-       }*/
+        if(!window.sessionStorage.getItem('token')) {
+            window.location.href = "index.html";
+        }
+
 
     </script>
 </body>

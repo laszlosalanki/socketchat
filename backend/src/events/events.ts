@@ -2,6 +2,7 @@ import {
   ConnectedSocket,
   MessageBody,
   OnGatewayConnection,
+  OnGatewayDisconnect,
   SubscribeMessage,
   WebSocketGateway,
   WebSocketServer,
@@ -14,7 +15,7 @@ import { TYPES } from '../utilities/types';
 import { AuthService } from '../auth/interfaces/auth.service.interface';
 
 @WebSocketGateway({ cors: true })
-export class EventsGateway implements OnGatewayConnection {
+export class EventsGateway implements OnGatewayConnection, OnGatewayDisconnect {
   @WebSocketServer()
   server: Server;
 
@@ -28,6 +29,7 @@ export class EventsGateway implements OnGatewayConnection {
     @MessageBody() data: string,
     @ConnectedSocket() client: Socket,
   ): Promise<WsResponse<any>> {
+    console.log(data);
     client.broadcast.emit('message', {
       from: client.handshake.auth.username,
       data,
@@ -41,7 +43,12 @@ export class EventsGateway implements OnGatewayConnection {
     if (!user) {
       client.disconnect(true);
     } else {
-        client.handshake.auth.username = user.username;
+      client.handshake.auth.username = user.username;
+      client.broadcast.emit('user-connected', user.username);
     }
+  }
+
+  public async handleDisconnect(client: any): Promise<any> {
+    client.broadcast.emit('user-disconnected', client.handshake.auth.username);
   }
 }
