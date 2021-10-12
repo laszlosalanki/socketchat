@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="join-style.css" />
+    <title>SocketChat-Join</title>
+</head>
+<body>
+    <div class="join-container">
+        <header class="join-header">
+            <img src="logo.svg"/><h1>SocketChat</h1>
+        </header>
+        <main class="join-main">
+            <form action="chat.html">
+                <div class="form-control">
+                    <label for="new-room">*New Room</label>
+                    <input
+                        type="text"
+                        name="new-room"
+                        id="new-room"
+                        placeholder="Enter room name"
+                    />
+                </div>
+                <button type="submit" class="btn" id="c-btn">Create Room</button>
+                <div class="form-control">
+                    <label for="room">Select Room</label>
+                    <select name="room" id="room" required>
+                        <option value="JavaScript">Room 1</option>
+						<option value="Python">Room 2</option>
+						<option value="PHP">Room 3</option>
+						<option value="C#">Room 4</option>
+						<option value="Java">Room 5</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn" id="j-btn">Join Chat</button>
+            </form>
+        </main>
+    </div>
+</body>
+</html>
