@@ -29,18 +29,33 @@ Rendszerterv
         - Chat felület létrehozása
 
   - Mérföldkövek:
-    
-    1. Egy alap rendszer és önálló weboldal létrehozása ( összeköttetés nelkül )
-    2. Az 1.0 -ás verzió elkészítése, kiadása
+    1. Alap felhasználói felület megtervezése
+    2. Alap bejelentkező felület lérehozása
+    3. Alap regisztrációs felület létrehozása
+    4. Alap kezelőfelület létrehozása (bejelentkezés utáni felület)
+    5. API endpointok létrehozása
+    6. A chat szerver létrehozása
+    7. Az alkalmazás tesztelése
+    8. Az 1.0 -ás verzió kiadása
   
 4. Követelmények
 
+    v1.0
     - Felhasználói fiók létrehozása, azonosítása.
     - Egyedi felhasználónevek.
     - Jelszó biztonsági megszorítások.
     - Bizalmas információk titkosítása (pl. jelszó).
     - Nem tárolódó üzenetek.
     - Kijelentkezés, visszairányítás egy bejelentkező oldalra.
+
+    v2.0
+    - Bejelentkezési lehetőség Google, GitHub, Atlassian fiókkal.
+    - Lehetőség chat szobák létrehozására, törlésére, becsatlakozásra.
+    - Más nyelven küldött üzenet lefordítása automatikusan (tehát ami nem a szoba alapértelmezett nyelve), majd fordítás utáni megjelenítése.
+    - Lehetőség legyen az automatikus fordítás kikapcsolására a szoba beállításainál.
+    - A létrehozott szobában alapértelmezett nyelv beállítása.
+    - A szobákban küldött üzenetek eltárolása, betöltése.
+    - A felhasználó által eltöltött idő mérése és eltárolása, megjelenítése.
 
 5. Funkcionális terv
 
@@ -59,7 +74,9 @@ Rendszerterv
 
 9. Adatbázis terv
 
-    Az adatok (felhasználónév, jelszó) MongoDB (nosql) adatbázisban történik.
+    Az adatok (felhasználónév, jelszó, üzenetek) MongoDB (nosql) adatbázisban történik.
+    
+    Az új verzióban (v2.0) eltárolásra kerülnek a chatszobák adatai, a chatszobákban küldött üzenetek, illetve az egyes felhasználók által eltöltött idő az alkalmazásban. Amennyiben a felhasználó valamilyen harmadik fél által nyújtott bejelentkezést (Elérhető: Google, GitHub, Atlassian) használ az alkalmazásba történő belépéshez, a hozzá tartozó felhasználói azonosító is eltárolásra kerül.
 
 10. Fizikai környezet
 
