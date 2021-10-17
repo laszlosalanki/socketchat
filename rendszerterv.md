@@ -96,12 +96,29 @@ Rendszerterv
         - Bejelentkezéskor megjelenik a csatlakozó felhasználó neve a chat felületen
       - Regisztráció
         - Felhasználónév - jelszó - ismételt jelszó 
-      - Üzenet küldés
-        - Az elküldött üzenet a küldőnek illetve mindenki másnak is megjelenjen
+      - Chat szoba kezelő felület
+        - TextBox: új szoba létrehozásához megadható a szoba neve
+        - Dropdown list: az új szoba preferált nyelve
+        - Button: szoba létrehozása és csatlakozás
+        - Dropdown list: meglévő szobák listája
+        - Button: csatlakozás a kiválasztott szobához
+      - Chat szoba felület
+        - Szoba résztvevőinek megjelenítése
+        - Szoba nevének megjelenítése
+        - Szoba alapértelmezett nyelvének megjelenítése
+        - Fordítás beállító felület
+        - Kijelentkező gomb
+        - Szoba elhagyása gomb
+        - Elküldött üzenetek megjelenítése
+        - Beviteli mező az elküldendő üzenetnek
+        - Üzenet küldése gomb
+        - Háttér választó felület
       - Kijelentkezés
         - Kijelentkezéskor megjelenik a lecsatlakozó felhasználó neve a chat felületen
-      - Csatlakozott felhasználók listájának megtekinktése belépés után
-        - Folyamatos frissítést igényel
+        - A böngésző visszairányít a bejelentkezési/regisztrációs felületre
+      - Szoba elhagyása
+        - Szoba elhagyásánál megjelenik a szobát elhagyó felhasználó neve a chat felületen
+        - A böngésző visszairányít a chat szoba kezelő felületre
 
 9. Adatbázis terv
 
