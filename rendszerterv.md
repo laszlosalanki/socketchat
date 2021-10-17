@@ -49,13 +49,44 @@ Rendszerterv
     - Kijelentkezés, visszairányítás egy bejelentkező oldalra.
 
     v2.0
-    - Bejelentkezési lehetőség Google, GitHub, Atlassian fiókkal.
-    - Lehetőség chat szobák létrehozására, törlésére, becsatlakozásra.
-    - Más nyelven küldött üzenet lefordítása automatikusan (tehát ami nem a szoba alapértelmezett nyelve), majd fordítás utáni megjelenítése.
-    - Lehetőség legyen az automatikus fordítás kikapcsolására a szoba beállításainál.
-    - A létrehozott szobában alapértelmezett nyelv beállítása.
-    - A szobákban küldött üzenetek eltárolása, betöltése.
-    - A felhasználó által eltöltött idő mérése és eltárolása, megjelenítése.
+    1. Bejelentkezési lehetőségek
+        - Google
+        - GitHub
+        - Atlassian
+
+    2. Chat szobák
+        - Létrehozás
+        - Törlés
+        - Becsatlakozás
+        - Szoba alapértelmezett nyelvének beállítása
+        - Létrehozott szobák nyelvének megjelenítése
+        - Szobákban küldött üzenetek eltárolása
+        - Szobákban küldött üzenetek betöltése
+        - Üzenetek küldési idejének megjelenítése
+
+    3. Fordítás
+        - Preferrált nyelv beállítása (ki/be kapcsolása)
+        - A szoba alapértelmezett nyelve alapján történő fordítás
+        - A fordítás alapértemezetten be legyen kapcsolva
+        - Figyelmeztetés a fordítás bekapcsolásánál (csak az adott felhasználónak) (ki/be kapcsolása)
+        - A fordítási beállítás elmentése az adatbázisban
+
+    4. Felhasználó
+        - Háttér állítása
+        - Használati idő mérése
+        - Mért idő eltárolása
+        - Mért idő megjelenítése
+
+    5. Új design
+        - Chat szoba kezelési felülete
+        - Személyreszabási lehetőségek
+
+    6. (Nem garantált)
+        - Spellcheck?
+
+    | Időelosztási terv | 1. hét | 2. hét | 3. hét | 4. hét | 5. hét | 6. hét | 7. hét | 8. hét |
+    | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+    | - | 1. feature, 5. feature | 2. feature | 2. feature | 3. feature | 3. feature | 4. feature | tesztelés és 6. feature | bemutatás |
 
 5. Funkcionális terv
 
@@ -76,7 +107,7 @@ Rendszerterv
 
     Az adatok (felhasználónév, jelszó, üzenetek) MongoDB (nosql) adatbázisban történik.
     
-    Az új verzióban (v2.0) eltárolásra kerülnek a chatszobák adatai, a chatszobákban küldött üzenetek, illetve az egyes felhasználók által eltöltött idő az alkalmazásban. Amennyiben a felhasználó valamilyen harmadik fél által nyújtott bejelentkezést (Elérhető: Google, GitHub, Atlassian) használ az alkalmazásba történő belépéshez, a hozzá tartozó felhasználói azonosító is eltárolásra kerül.
+    Az új verzióban (v2.0) eltárolásra kerülnek a chatszobák adatai, felhasználók beállításai, a chatszobákban küldött üzenetek, illetve az egyes felhasználók által eltöltött idő az alkalmazásban. Amennyiben a felhasználó valamilyen harmadik fél által nyújtott bejelentkezést (Elérhető: Google, GitHub, Atlassian) használ az alkalmazásba történő belépéshez, a hozzá tartozó felhasználói azonosító is eltárolásra kerül.
 
 10. Fizikai környezet
 
