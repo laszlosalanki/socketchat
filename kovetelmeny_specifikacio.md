@@ -12,10 +12,13 @@ Követelmény specifikáció
 4. Jelenlegi üzleti folyamatok modellje.
 
     Tegyük fel, hogy a megrendelőnk szervezete jelenleg rendelkezik az üzemeltetés, könyvelés és megrendelés üzleti folyamatokkal, valamint az iroda és reklám üzleti entitásokkal.
+    A jelenlegi üzleti folyamatok bővültek, fejlődtek valamint a vállalat is több dologgal foglalkozik egyszerre ezáltal az alkalmazottak száma is jelentősen megnőtt.
 
 5.  Igényelt üzleti folyamatok modellje.
 
     A megrendelőnk szervezete igényli a szolgáltatást, mint üzleti folyamatot amelyet a szoftverünk támogatni fog. A webes chat felületünk egy ingyenes szolgáltatást fog nyújtani bárki számára aki írásos kapcsolatba akar lépni más felhasználókkal. Ezt a megrendelőnk szervezete akár egy belső kommunikációs rendszerként is felhasználhatja. A vevő szervezet egy igényelt üzleti entitása a weboldal, amelyen a szolgáltatás, mint üzleti folyamat tevékenységet végez. Ezt a kulcsfontosságú entitást használja ki a mi alkalmazásunk is, hiszen egy webes felületen lehet majd használni az alkalmazást.
+    A megrendelőnk vállalata fejlődött, ezért a belső kommunikáció hatékonysága érdekében az alkalmazásunk további funkciókat igényel.
+    Ezeket a funkciókat az alkalmazottak illetve a vezetőség a funkcionális specifikáció 4. pontja alapján kell elképzelnie.
 
 6. Követelény lista
     
