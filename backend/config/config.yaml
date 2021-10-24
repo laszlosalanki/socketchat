@@ -3,7 +3,7 @@ http:
   port: 3000
 
 database:
-  host: db
+  host: localhost
   port: 27017
   db: socketchat
   username: root
