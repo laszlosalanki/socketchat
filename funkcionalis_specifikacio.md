@@ -6,12 +6,22 @@ Funkcionális specifikáció
     Az egyszerű, webes SocketChat appunkkal kapcsolatos feladatokat felosztottuk: Front-end (UI), Messaging, Back-end. Folyamatban van a
     design és a funkciók elhelyezésének/elérésének megbeszélése.
 
+    ----------------
+
+    Elkészült az első, bemutatásra szánt verzió. Meghatároztuk a 2.0 fontosabb funkcióit, hetekre bontott ütemtervet készítettünk. Felosztottuk a dokumentáció írás feladatait, az appot illető teendők felosztása folyamatban van.
+
 2. Vágyálom rendszer leírása
 
     A SocketChat egy egyszerű, broadcast alapú, webes, valós idejű chat applikáció lesz. A felhasználót egy regisztrációs/bejelentkezési
     felület fogadja majd. Amennyiben korábban regisztrált (felhasználónév, jelszó) már az oldalon, akkor a belépést, ha nem, akkor pedig a
     bejelentkezést követően a szoftver át fogja irányítani a chat felületre. Itt megtekinthetőek lesznek az üzenetek és a felhasználók, a
     felület alján pedig a szövegbeviteli mező és a küldés gomb.
+
+    ---------------
+
+    A 2.0 verzió sok új funkciót fog tartalmazni, ilyenek a chat szobák is, melyeknek preferrált nyelvet megadva jelezhetjük, hogy - ha bekapcsolva hagyjuk a funkciót - milyen nyelven szeretnénk olvasni a megjelenő üzeneteket.
+    A beszélgetés utolsó állapota mindig tárolva lesz, így visszalépve a szobába ott folytathatjuk a beszélgetést, ahol abbahagytuk.
+    Új design, személyre szabási beállítások teszik majd színesebbé a kezelőfelületet.
 
 4. Jelenlegi üzleti folyamatok modellje.
 
@@ -233,6 +243,14 @@ Funkcionális specifikáció
     kívánja használni. A felhasználónévre és jelszóra vonatkozó megszorítások megsértéséről egy - a regisztrációs/bejelentkezési blokk
     alatt megjelenő - üzenet fogja informálni a felhasználót (ahogy a regisztráció sikerességéről is). HTML (+CSS) lap készül az üzenetek
     megjelenítésére is, itt lesz lehetőség üzenetet küldeni és megtekinteni, valamint listázni az elérhető felhasználókat.
+
+    A 2.0 verzióban a bejelentkezési lehetősgek kibővített listája miatt a meglévő oldal három gombbal egészül ki: Bejelentkezés Google fiókkal, Bejelentkezés Atlassain fiókkal, Bejelentkezés GitHub fiókkal. 
+
+    A chat szobák kialakítása miatt szükség lesz egy másik oldalra is, ahol az ide kapcsolódó funkciók érhetők el (bejelentkezés után a szerver ide irányítja át a felhasználót). Egy szövegbeviteli mezőbe írva adhatjuk meg az új szoba nevét, mellette egy DropDownList elemei közül választhatunk preferrált nyelvet. Ha nem szeretnénk új szobát létrehozni, akkor kapcsolódhatunk meglévőhöz is, itt is DropDownList segítségével megy a kiválasztás.
+
+    A chat felületen látható lesz az aktuális szoba neve, alatta pedig a felhasználók listája. Jobb oldalon az üzenetek (küldő, küldés ideje, üzenet), alul pedig egy szövegbeviteli mező lesz (ide írhatjuk az elküldeni kívánt üzenetet) egy küldés gombbal; valamint a jobb felső sarokban egy kijelentkezés és szoba elhagyása gombbal. Az automatikus fordítást a szoba preferrált nyelvére egy kapcsoló segítségével lehet majd állítani (szintén ezen a felületen), ez alapértelmezetten engedélyezett.
+
+    A személyre szabási lehetőségek részeként bekerülő ColorPicker segítségével választhatunk majd háttérszínt.
 
 12. Fogalomszótár
 
