@@ -3,11 +3,19 @@ Követelmény specifikáció
 
 1. Jelenlegi helyzet leírása
 
-    Szerettünk volna egy olyan egyszerű, ingyenes webes chat felületet készíteni, amely e-mail cím megadása nélkül is használható, ugyanis amikkel találkoztunk, mind ehhez voltak kötve. A létező alternatívák felhasználói felülete és funkciói sokszor nem könnyítik meg a felhasználó helyzetét, és a reszponzív felhasználást is nehezítik, lassítják (játékok, stb...).
+    Szerettünk volna egy olyan egyszerű, ingyenes webes chat felületet készíteni, amely e-mail cím megadása nélkül is használható, ugyanis amikkel találkoztunk, mind ehhez voltak kötve. A létező alternatívák felhasználói felülete és funkciói sokszor nem könnyítik meg a felhasználó helyzetét, és a reszponzív felhasználást is nehezítik, lassítják (játékok, stb...). A 2.0 verzió funkcióinak implementálása folyamatban van...
 
 2. Vágyálom rendszer leírása
 
-    A project célja egy olyan egyszerű webes chat felület készítése HTML - CSS - NestJS - socket.io alapokon, amely használatához e-mail címre nem, csupán felhasználónévre és jelszóra van szükség. Az egyszerű design, valamint a felesleges funkcionalitás elhagyása egy gyorsabb, lényegretörőbb rendszerért.
+    A project célja egy olyan egyszerű webes chat felület készítése HTML - CSS - NestJS - socket.io alapokon, amely használatához e-mail címre nem, csupán felhasználónévre és jelszóra van szükség. Az egyszerű design, valamint a felesleges funkcionalitás elhagyása egy gyorsabb, lényegretörőbb rendszerért. 
+
+    A 2.0 verzióban lehetőség lesz Google, GitHub vagy Atlassain bejelenetkezésre, ezzel gyorsítva a regisztráció és/vagy bejelentkezés folyamatát. 
+    
+    A chat funkció alapvető változáson megy keresztül. A felhasználó chat szobákat hozhat létre, vagy csatlakozhat már meglévőkbe, valamint ezeket törölheti is. A szobák alapértelmezett nyelve létrehozásnál megadható lesz. Az elküldött üzenetek mellett megjelenik azok küldési ideje, és ha egy felhasználó kilép, akkor visszalépés után ott folytathatja az üzenetek olvasását, ahol abbahagyta.
+
+    Állítható funkció lesz az automatikus fordítás Goole API segítségével, bár ez alapértelmezetten engedélyezett. A célnyelv minden esetben a szoba preferrált nyelve. A felhasználó a beállítások megváltozásáról (csak számára megjelenő) üzenetben értesül, a fordítási beállításokat az app adatbázisban tárolja.
+
+    Személyre szabási lehetőséggel bővülnek a funkciók, mint pl. a háttér beállítása. 
 
 4. Jelenlegi üzleti folyamatok modellje.
 
