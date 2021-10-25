@@ -180,7 +180,39 @@ Funkcionális specifikáció
     
     (v2.0)
     
-    Az előző verzió továbbfejlesztése új funkcionalitásokkal.
+    Az előző verzióhoz képest a bejelentkező illetve regisztráló felület egy kevés vizuális frissítést kapott. Nagyobb a betűméret illetve pár árnyékolás is megjelent.
+
+    ![register](docs/screen/register.png)
+
+    A "Register" fülön belül a megfelelő adatok megadásával regisztrálni lehet lásd:
+
+    ![register](docs/screen/register_input.png)
+
+    A regisztrált adatokat felhasználva a "Login" fülön belül lehetőség van bejelentkezni lásd:
+
+    ![register](docs/screen/login.png)
+
+    Teszt adatok:
+
+    ![register](docs/screen/login_input.png)
+
+    A bejelentkezés után a felhasználó át lesz irányítva a szoba kezelő felületre ahol lehetőség van szoba létrehozására, szoba alapértelmezett nyelvének beállítására valamint ki lehet választani hogy melyik, már létrehozott szobába szeretnénk csatlakozni.
+
+    ![register](docs/screen/join.png)
+
+    Később bővülnek majd a nyelvek.
+
+    ![register](docs/screen/join_input1.png)
+
+    Az általunk létrehozott szoba is ide kerül majd be.
+
+    ![register](docs/screen/join_input2.png)
+
+    A szoba kiválasztása után a csatlakozás gomb átirányítja a felhasználót chat felületre.
+
+    ![register](docs/screen/chat.png)
+
+    Ezen a felületen megjelenik majd minden, a szobával kapcsolatos információ valamint olyan gombok amelyek valamilyen funkcionalitás alkalmazását teszik lehetővé.
 
 10. Forgatókönyvek
 
