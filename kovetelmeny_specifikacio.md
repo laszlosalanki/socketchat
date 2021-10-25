@@ -54,4 +54,4 @@ Követelmény specifikáció
     
     Node.Js: A Node.Js egy nyílt forráskódú, platformfüggetlen, JavaScript futási környezet, amely lehetővé teszi a JavaScript kód futtatását böngészők keretein kívül.
     
-    Spellcheck API: Az API endpointra küldött kérés megadja, hogy az adott szó helyesen van-e leírva, vagy hogyan kéne leírni az adott szót. az adott nyelven.
+    Spellcheck API: Az API endpoint-ra küldött kérés megadja, hogy az adott szó helyesen van-e leírva, vagy hogyan kellene leírni az adott szót az adott nyelven.

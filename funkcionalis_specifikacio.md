@@ -77,7 +77,7 @@ Funkcionális specifikáció
     3. A jelszónak is kellenének bizonyos megszorításokk, mint például minimális hossz, szükséges karakterek (kis -és nagybetü, szám).
     Figyelni kell arra, hogy ezeket az adatokat a szerver oldalon is érvényesítsük.
     4.  A bizalmasabb információt, mint a jelszót titkosítva kell eltárolnunk (nem visszafejthetően, hash-elve).
-    5.  Az üzenetek ne kerüljenek tárolára adatbázisban, csak az adott munkamenetben lehessen látni a mások által, illetve a felhasználó
+    5.  Az üzenetek ne kerüljenek tárolásra adatbázisban, csak az adott munkamenetben lehessen látni a mások által, illetve a felhasználó
     maga által küldött üzeneteit.
     6.  Belépés után a felhasználók tudjanak egymással valós időben kommunikálni, és lássák, hogy kik elérhetőek (felhasználónevüket).
     7.  Kilépés után már csak a többi, még csatlakozott felhasználónak látszódjanak az üzenetek, amit a kijelentkezett felhasználó küldött,
@@ -182,7 +182,7 @@ Funkcionális specifikáció
     
     Az előző verzió továbbfejleszése új funkcionalitásokkal.
 
-10. Forgató könyvek
+10. Forgatókönyvek
 
     (v1.0)
 
