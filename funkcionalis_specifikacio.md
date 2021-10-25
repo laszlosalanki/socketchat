@@ -19,7 +19,7 @@ Funkcionális specifikáció
 
     ---------------
 
-    A 2.0 verzió sok új funkciót fog tartalmazni, ilyenek a chat szobák is, melyeknek preferrált nyelvet megadva jelezhetjük, hogy - ha bekapcsolva hagyjuk a funkciót - milyen nyelven szeretnénk olvasni a megjelenő üzeneteket.
+    A 2.0 verzió sok új funkciót fog tartalmazni, ilyenek a chat szobák is, melyeknek preferált nyelvet megadva jelezhetjük, hogy - ha bekapcsolva hagyjuk a funkciót - milyen nyelven szeretnénk olvasni a megjelenő üzeneteket.
     A beszélgetés utolsó állapota mindig tárolva lesz, így visszalépve a szobába ott folytathatjuk a beszélgetést, ahol abbahagytuk.
     Új design, személyre szabási beállítások teszik majd színesebbé a kezelőfelületet.
 
@@ -28,7 +28,7 @@ Funkcionális specifikáció
     (v1.0)
 
     Napjainkban már mindenki a fejlett és híres chat alkalmazásokat használja, mint például Facebook Messenger, WhatsApp, Discord amelyek
-    sok más funkciókkal is rendelkeznek a chatelelésen kívűl. Egy vállalati környezeten belül tárgyalt információkat az ott dolgozó
+    sok más funkciókkal is rendelkeznek a chatelelésen kívül. Egy vállalati környezeten belül tárgyalt információkat az ott dolgozó
     embereknek nem biztos, hogy biztonságos egy ilyen nyílt felületen megosztani egymás között valamint nem is biztos, hogy szükséges egy
     ennyire összetett felületet használni. Erre lehet jó egy egyszerű belső kommunikációra képes webalkalmazás.
 
@@ -38,22 +38,22 @@ Funkcionális specifikáció
     szükség van olyan lehetőségekre, funkciókra az alkalmazáson belül amelyek lehetőség kínálnak mégtöbb üzleti folyamatra.
     Egy nagy fejlesztés az előző verzióhoz képest az hogy egy vállalaton belül akár a különböző szekcióknak külön chat szobái lehetnek így
     nem keverednek a témák a beszélgetés közben és mindenki megérti miről beszél a másik alkalmazott mivel ugyan azon a szekción belül
-    dologoznak. 
-    Több szobára van szükség abban az esetben is ha vállalton belül az embereket a különböző poziciójuk alapján különítjük el. Lehetőség
+    dolgoznak. 
+    Több szobára van szükség abban az esetben is ha vállalton belül az embereket a különböző pozíciójuk alapján különítjük el. Lehetőség
     van tehát hogy külön szobában beszélgessenek a kezdő alkalmazottak, tapasztalt alkalmazottak, szekció vezetők, igazgatók és
     igazgatóhelyettesek.
     A szobák törlésére illetve létrehozására lehetőség van viszont a jogosultság kezelés még nincs egyáltalán kidolgozva.
     Egy másik nagy fejlesztés az hogy az elküldött üzenetek tárolásra kerülnek az adatbázisban, ezért az üzenetek visszanézhetőek lesznek
     illetve megmaradnak kijelentkezés majd visszajelentkezés után is.
-    Ezen kívűl az alkalmazás új verziója felhasználóbarátabb lett mivel a felhasználó a chat felületen találkozik több gombbal is, amelyek
+    Ezen kívül az alkalmazás új verziója felhasználóbarátabb lett mivel a felhasználó a chat felületen találkozik több gombbal is, amelyek
     a kijelentkezést/ bejelentkezést, fordítás kikapcsolását/ bekapcsolását teszik lehetővé valamint saját háttérszínt állíthat
     magának ami csak neki jelenik meg.
     Az új verzió helyesírás ellenőrzést is tartalmaz amely az alkalmazottak közötti gördülékeny kommunikációt segíti elő.
-    A szobákat akár alapértelmezett nyelveik szerint is létrehozhatjuk mivel lehetőség van erre a beállításra is. Előrfordul hogy egy cégen
+    A szobákat akár alapértelmezett nyelveik szerint is létrehozhatjuk mivel lehetőség van erre a beállításra is. Előfordul hogy egy cégen
     belül több nyelvet is beszélnek az alkalmazottak.
-    Erre egy nagyon ötletes megoldás az autómatikus szöveg fordítás lehetősége amely a chat felületén ki/be kapcsolható.
+    Erre egy nagyon ötletes megoldás az automatikus szöveg fordítás lehetősége amely a chat felületén ki/be kapcsolható.
     Bekapcsolás esetén az alkalmazott minden, a szobán belül megjelenített üzenetet az adott szoba alapértelmezett nyelvén fog látni.
-    Ha ez a funkció ki van kapcsolva akkor az adott felhasználó minden üzenetet pontosan ugyan úgy lát mint ahogyan azt a küldő megírta.  
+    Ha ez a funkció ki van kapcsolva akkor az adott felhasználó minden üzenetet pontosan ugyan úgy lát mint ahogyan azt a küldő megírta.
 
 
 5. Igényelt üzleti folyamatok modellje.
@@ -65,7 +65,7 @@ Funkcionális specifikáció
 
     (v2.0)
 
-    Napjainkban a egy vállalaton belül nagyon komplex folyamatok menneg végbe nap mint nap ezért igény van minél nagyobb komplexitású alkalmazásokra amelyeket az adott vállalat maximáisan ki tud használni. Ilyen fejlesztésekkel láttuk el a mi alkalmazásunkat is, annak érdekében hogy használhatóbb legyen a vállalkozások számára.
+    Napjainkban a egy vállalaton belül nagyon komplex folyamatok mennek végbe nap mint nap ezért igény van minél nagyobb komplexitású alkalmazásokra amelyeket az adott vállalat maximálisan ki tud használni. Ilyen fejlesztésekkel láttuk el a mi alkalmazásunkat is, annak érdekében hogy használhatóbb legyen a vállalkozások számára.
     
 6. Követelmény lista
 
@@ -74,9 +74,9 @@ Funkcionális specifikáció
     1. Szükséges lesz egy olyan oldalra, ahol a felhasználók tudnak fiókot létrehozni. Ehhez egy regisztrációs API-t, illetve egy frontend
     oldalt kell tervezni.
     2. Egy felhasználónév csak egyszer szerepeljen a rendszerben, tehát egyedinek kell lennie.
-    3. A jelszónak is kellenének bizonyos megszorításokk, mint például minimális hossz, szükséges karakterek (kis -és nagybetü, szám).
+    3. A jelszónak is kellenének bizonyos megszorítások, mint például minimális hossz, szükséges karakterek (kis -és nagybetű, szám).
     Figyelni kell arra, hogy ezeket az adatokat a szerver oldalon is érvényesítsük.
-    4.  A bizalmasabb információt, mint a jelszót titkosítva kell eltárolnunk (nem visszafejthetően, hash-elve).
+    4.  A bizalmasabb információt, mint a jelszót titkosítva kell eltárolnunk (nem visszafejthetően, hashelve).
     5.  Az üzenetek ne kerüljenek tárolásra adatbázisban, csak az adott munkamenetben lehessen látni a mások által, illetve a felhasználó
     maga által küldött üzeneteit.
     6.  Belépés után a felhasználók tudjanak egymással valós időben kommunikálni, és lássák, hogy kik elérhetőek (felhasználónevüket).
@@ -85,7 +85,7 @@ Funkcionális specifikáció
     
     (v2.0)
     
-    1. Szükség lesz új gombokra, amely lehetőséget biztosítanak a harmadik felek által üzemeltetett (általunk kiválaszott) bejelentkezésre.
+    1. Szükség lesz új gombokra, amely lehetőséget biztosítanak a harmadik felek által üzemeltetett (általunk kiválasztott) bejelentkezésre.
     2. A fent említett bejelentkezéshez az adott platformon szükséges felhasználói fiók, így ezekre (a felhasználói adatokra) vonatkozó
     megszorításokat nem tudjuk biztosítani, rájuk hagyatkozunk.
     3. Ezen bejelentkezést használva nem kerül tárolásra jelszó, csak egy platform azonosító és felhasználónév.
@@ -139,7 +139,7 @@ Funkcionális specifikáció
     - Felhasználónév:
         - Egyedinek kell lennie
     - Jelszó:
-        - Minimum 6 karakteres, legalább 1 kis és nagy betüt kell tartalmaznia, illetve 1 számot.
+        - Minimum 6 karakteres, legalább 1 kis és nagy betűt kell tartalmaznia, illetve 1 számot.
 
     Bejelentkezés:
     - API és bejelentkező felület (login form)
@@ -174,13 +174,13 @@ Funkcionális specifikáció
 
     (v1.0)
     
-    Egy olyan webes chat applikáció, ahól valós időben látjuk a résztvevők üzeneteit és neveit. Fontos része az applikációnak, hogy
+    Egy olyan webes chat applikáció, ahol valós időben látjuk a résztvevők üzeneteit és neveit. Fontos része az applikációnak, hogy
     láthatóak legyenek az elérhető felhasználók, illetve ezeknek a megjelenítőknek változzon az állapota valós időben, amennyiben egy
     kliens csatlakozás, vagy kilépés történik.
     
     (v2.0)
     
-    Az előző verzió továbbfejleszése új funkcionalitásokkal.
+    Az előző verzió továbbfejlesztése új funkcionalitásokkal.
 
 10. Forgatókönyvek
 
@@ -199,7 +199,7 @@ Funkcionális specifikáció
     
     Üzenet küldése után megjelenik minden fél számára az üzenet, szinte azonnal.
     
-    Kijelentkezésnél a felhasználó eltűnik az aktív felhasználók listjáról.
+    Kijelentkezésnél a felhasználó eltűnik az aktív felhasználók listájáról.
     
     (v2.0)
     
@@ -208,7 +208,7 @@ Funkcionális specifikáció
     
     Bejelentkezés után egy kezelőfelület fogadja a felhasználót.
     
-    A kezelőfelületen lehetősége van egy opció kiválasztására több köszül.
+    A kezelőfelületen lehetősége van egy opció kiválasztására több közül.
     
         1. Az egyik opció, egy már létező chat szobába való becsatlakozás.
         2. A másik opció egy új chat szoba létrehozás.
@@ -221,7 +221,7 @@ Funkcionális specifikáció
     szoba addig létezik, amíg törlése nem kerül. Létrehozás után nem kerül be automatikusan a szobába, explicit módon kell az előző pontban
     történő leírás alapján csatlakozni.
     
-    A felhasználónak a kezelő felületen kívűl megjelenik egy gomb, amely célja a felhasználói beállítások állítása, mint például az
+    A felhasználónak a kezelő felületen kívül megjelenik egy gomb, amely célja a felhasználói beállítások állítása, mint például az
     elküldött üzenetek automatikus fordításának kikapcsolás, vagy egy tetszőleges háttér beállítása, amellyel tudja személyre szabni a
     felületét. A háttér állítása során csak annak a felhasználónak változik a háttere, amelyik végrehajtotta a folyamatot, a többi
     felhasználónál nem történik változás (ezért is személyre szabás).
@@ -229,7 +229,7 @@ Funkcionális specifikáció
     Egy szobába való csatlakozás után lehetőség lesz a szoba törlésére, egy arra szolgáló gombbal. Fontos megjegyezni, hogy csak az tudja a
     szobát törölni, aki létrehozta az adott szobát.
     
-    A szobának beállításai is vannak, mint példáúl alapértelmezett nyelv állítása. Ez az a nyelv, amelyre az üzenetek alapértelmezetten
+    A szobának beállításai is vannak, mint például alapértelmezett nyelv állítása. Ez az a nyelv, amelyre az üzenetek alapértelmezetten
     lefordításra kerülnek, ha egy felhasználó más nyelven küldené az üzenetét. Amennyiben a felhasználó kikapcsolja a saját beállításaiban
     ezt a fordítást, az elküldött üzenetei nem kerülnek lefordításra se a saját, se más felületén. A fordított szöveg minden felhasználónak
     láthatóvá válik a szobában.
@@ -244,11 +244,11 @@ Funkcionális specifikáció
     alatt megjelenő - üzenet fogja informálni a felhasználót (ahogy a regisztráció sikerességéről is). HTML (+CSS) lap készül az üzenetek
     megjelenítésére is, itt lesz lehetőség üzenetet küldeni és megtekinteni, valamint listázni az elérhető felhasználókat.
 
-    A 2.0 verzióban a bejelentkezési lehetősgek kibővített listája miatt a meglévő oldal három gombbal egészül ki: Bejelentkezés Google fiókkal, Bejelentkezés Atlassain fiókkal, Bejelentkezés GitHub fiókkal. 
+    A 2.0 verzióban a bejelentkezési lehetőségek kibővített listája miatt a meglévő oldal három gombbal egészül ki: Bejelentkezés Google fiókkal, Bejelentkezés Atlassain fiókkal, Bejelentkezés GitHub fiókkal. 
 
-    A chat szobák kialakítása miatt szükség lesz egy másik oldalra is, ahol az ide kapcsolódó funkciók érhetők el (bejelentkezés után a szerver ide irányítja át a felhasználót). Egy szövegbeviteli mezőbe írva adhatjuk meg az új szoba nevét, mellette egy DropDownList elemei közül választhatunk preferrált nyelvet. Ha nem szeretnénk új szobát létrehozni, akkor kapcsolódhatunk meglévőhöz is, itt is DropDownList segítségével megy a kiválasztás.
+    A chat szobák kialakítása miatt szükség lesz egy másik oldalra is, ahol az ide kapcsolódó funkciók érhetők el (bejelentkezés után a szerver ide irányítja át a felhasználót). Egy szövegbeviteli mezőbe írva adhatjuk meg az új szoba nevét, mellette egy DropDownList elemei közül választhatunk preferált nyelvet. Ha nem szeretnénk új szobát létrehozni, akkor kapcsolódhatunk meglévőhöz is, itt is DropDownList segítségével megy a kiválasztás.
 
-    A chat felületen látható lesz az aktuális szoba neve, alatta pedig a felhasználók listája. Jobb oldalon az üzenetek (küldő, küldés ideje, üzenet), alul pedig egy szövegbeviteli mező lesz (ide írhatjuk az elküldeni kívánt üzenetet) egy küldés gombbal; valamint a jobb felső sarokban egy kijelentkezés és szoba elhagyása gombbal. Az automatikus fordítást a szoba preferrált nyelvére egy kapcsoló segítségével lehet majd állítani (szintén ezen a felületen), ez alapértelmezetten engedélyezett.
+    A chat felületen látható lesz az aktuális szoba neve, alatta pedig a felhasználók listája. Jobb oldalon az üzenetek (küldő, küldés ideje, üzenet), alul pedig egy szövegbeviteli mező lesz (ide írhatjuk az elküldeni kívánt üzenetet) egy küldés gombbal; valamint a jobb felső sarokban egy kijelentkezés és szoba elhagyása gombbal. Az automatikus fordítást a szoba preferált nyelvére egy kapcsoló segítségével lehet majd állítani (szintén ezen a felületen), ez alapértelmezetten engedélyezett.
 
     A személyre szabási lehetőségek részeként bekerülő ColorPicker segítségével választhatunk majd háttérszínt.
 
@@ -277,9 +277,9 @@ Funkcionális specifikáció
 
     Kilépés: Az a folyamat, mely során a felhasználó ki tud lépni az adott szobából majd ezután a szoba kezelő felületre lesz átirányítva.
 
-    Helyesírásellenőrző: Ellenőriz minden a szobában leírt szót, majd jelzi hogy ha valamelyik hibásan/ helytelenl lett leírva.
+    Helyesírásellenőrző: Ellenőriz minden a szobában leírt szót, majd jelzi hogy ha valamelyik hibásan/ helytelenül lett leírva.
 
-    Autómatikus fordító: Bekapcsolás esetén minden elküldött üzenetet az adott felhasználó a szoba alapértelmezett nyelvén lát. (Csak az
+    automatikus fordító: Bekapcsolás esetén minden elküldött üzenetet az adott felhasználó a szoba alapértelmezett nyelvén lát. (Csak az
     adott felhasználó aki bekapcsolta magának).
 
     Háttérszín változtatás: A felhasználó egy beállított színű hátteret fog látni a szobán belül. (a többi felhasználó ebből semmit nem
