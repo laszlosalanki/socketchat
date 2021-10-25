@@ -7,13 +7,13 @@ Követelmény specifikáció
 
 2. Vágyálom rendszer leírása
 
-    A project célja egy olyan egyszerű webes chat felület készítése HTML - CSS - NestJS - socket.io alapokon, amely használatához e-mail címre nem, csupán felhasználónévre és jelszóra van szükség. Az egyszerű design, valamint a felesleges funkcionalitás elhagyása egy gyorsabb, lényegretörőbb rendszerért. 
+    A projekt célja egy olyan egyszerű webes chat felület készítése HTML - CSS - NestJS - socket.io alapokon, amely használatához e-mail címre nem, csupán felhasználónévre és jelszóra van szükség. Az egyszerű design, valamint a felesleges funkcionalitás elhagyása egy gyorsabb, lényegretörőbb rendszerért. 
 
-    A 2.0 verzióban lehetőség lesz Google, GitHub vagy Atlassain bejelenetkezésre, ezzel gyorsítva a regisztráció és/vagy bejelentkezés folyamatát. 
+    A 2.0 verzióban lehetőség lesz Google, GitHub vagy Atlassain bejelentkezésre, ezzel gyorsítva a regisztráció és/vagy bejelentkezés folyamatát. 
     
     A chat funkció alapvető változáson megy keresztül. A felhasználó chat szobákat hozhat létre, vagy csatlakozhat már meglévőkbe, valamint ezeket törölheti is. A szobák alapértelmezett nyelve létrehozásnál megadható lesz. Az elküldött üzenetek mellett megjelenik azok küldési ideje, és ha egy felhasználó kilép, akkor visszalépés után ott folytathatja az üzenetek olvasását, ahol abbahagyta.
 
-    Állítható funkció lesz az automatikus fordítás Goole API segítségével, bár ez alapértelmezetten engedélyezett. A célnyelv minden esetben a szoba preferrált nyelve. A felhasználó a beállítások megváltozásáról (csak számára megjelenő) üzenetben értesül, a fordítási beállításokat az app adatbázisban tárolja.
+    Állítható funkció lesz az automatikus fordítás Google API segítségével, bár ez alapértelmezetten engedélyezett. A célnyelv minden esetben a szoba preferált nyelve. A felhasználó a beállítások megváltozásáról (csak számára megjelenő) üzenetben értesül, a fordítási beállításokat az app adatbázisban tárolja.
 
     Személyre szabási lehetőséggel bővülnek a funkciók, mint pl. a háttér beállítása. 
 
