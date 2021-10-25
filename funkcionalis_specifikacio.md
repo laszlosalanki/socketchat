@@ -237,6 +237,8 @@ Funkcionális specifikáció
     Kijelentkezés után az üzenetek nem vesznek el, mivel a szobák üzenetei az adatbázisban tárolásra kerülnek, így ismételt belépés után
     láthatóvá válnak az előzőleg elküldött üzenetek.
 
+    ![FlowChart](docs/flowchart.drawio.svg "FlowChart")
+
 11. Funkció – követelmény megfeleltetés
 
     A regisztrációhoz és bejelentkezéshez egy közös HTML (+CSS) lap készül, itt egy kattintással dönthet majd a felhasználó, hogy melyiket
