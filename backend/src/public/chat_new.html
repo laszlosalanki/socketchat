@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
   <link rel="stylesheet" href="chat_new-style.css">
+  <link rel="stylesheet" href="toggle.css">
   <title>ChatCord App</title>
 </head>
 <body>
   <div class="chat-container" id="chat">
     <header class="chat-header">
         <img src="logo.svg"/><h1>SocketChat</h1>
-        <a href="join.html" class="btn"><i class="fas fa-sign-out-alt"></i> Leave Room</a>
+        <a href="join.html" class="btn"><i class="fas fa-sign-out-alt"></i></a>
     </header>
     <main class="chat-main">
         <div class="chat-sidebar">
@@ -28,6 +29,13 @@
                 <option class="op" id="op4" onclick="paintBlue()">LIGHTBLUE</option>
                 <option class="op" id="op5" onclick="paintGrey()">GREY</option>
               </select>
+            </h2>
+            <h3><i class="fas fa-comment"></i> Translate:</h3>
+            <h2 id="room-translate">
+              <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+              </label>
             </h2>
             <h3><i class="fas fa-users"></i> Users</h3>
             <ul id="users">
@@ -71,30 +79,32 @@
 
   <script>
     function paintWhite() {
-      document.getElementById('chat').style.backgroundColor = "#fff";
-      document.getElementById('msg').style.backgroundColor = "#fff";
+      setTheme('#fff');
     }
     
     function paintOrange() {
-      document.getElementById('chat').style.backgroundColor = "#fcd0bf";
-      document.getElementById('msg').style.backgroundColor = "#fcd0bf";
+      setTheme('#fcd0bf');
     }
 
     function paintPurple() {
-      document.getElementById('chat').style.backgroundColor = "#f0cff0";
-      document.getElementById('msg').style.backgroundColor = "#f0cff0";
+      setTheme('#f0cff0');
     }
 
     function paintBlue() {
-      document.getElementById('chat').style.backgroundColor = "#b8e2e2";
-      document.getElementById('msg').style.backgroundColor = "#b8e2e2";
+      setTheme('#b8e2e2');
     }
 
     function paintGrey() {
-      document.getElementById('chat').style.backgroundColor = "#D3D3D3";
-      document.getElementById('msg').style.backgroundColor = "#D3D3D3";
+      setTheme('#D3D3D3');
     }
 
+  </script>
+
+  <script>
+      function setTheme(colour) {
+        let r = document.querySelector(':root');
+        r.style.setProperty('--theme-color', colour);
+      }
   </script>
 </body>
 </html>

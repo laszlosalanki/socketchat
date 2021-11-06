@@ -6,6 +6,7 @@
 	--light-color: #fff4df;
 	--success-color: #5cb85c;
 	--error-color: #d9534f;
+	--theme-color: white; 
 }
 
 * {
@@ -40,7 +41,7 @@ a {
 
 .chat-container {
 	max-width: 1100px;
-	background: #fff;
+	background: var(--theme-color);
 	margin: 30px auto;
 	overflow: hidden;
 }
@@ -80,6 +81,10 @@ a {
 	height: 30px;
 	font-style: italic;
 	font-weight: bold;
+}
+
+.chat-sidebar #room-translate {
+	background: var(--dark-color-b);
 }
 
 /* Theme options START */
@@ -159,6 +164,7 @@ a {
 	padding: 5px;
 	height: 40px;
 	flex: 1;
+	background: var(--theme-color);
 }
 
 #send-btn {

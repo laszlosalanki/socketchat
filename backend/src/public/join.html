@@ -44,10 +44,15 @@
                     </select>
                 </div>
                 <button type="submit" class="btn" id="j-btn" onclick="join()">Join Chat</button>
+                <button type="button" class="btn" id="j-btn" onclick="signOut()">Log Out</button>
             </form>
         </main>
     </div>
 
-    
+    <script>
+        function signOut() {
+            window.location.href = 'index.html';
+        }
+    </script> 
 </body>
 </html>
