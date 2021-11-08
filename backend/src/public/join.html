@@ -31,7 +31,7 @@
                         <option value="else">...</option>
                     </select>
                 </div>
-                <button type="submit" class="btn" id="c-btn">Create Room</button>
+                <button type="button" class="btn" id="c-btn">Create Room</button>
                 <div class="form-control">
                     <label for="room">Select Room</label>
                     <select name="room" id="room" required>
@@ -44,14 +44,18 @@
                     </select>
                 </div>
                 <button type="submit" class="btn" id="j-btn" onclick="join()">Join Chat</button>
-                <button type="button" class="btn" id="j-btn" onclick="signOut()">Log Out</button>
+                <button type="button" class="btn" id="lo-btn" onclick="logOut()">Log Out</button>
             </form>
         </main>
     </div>
 
     <script>
-        function signOut() {
+        function logOut() {
             window.location.href = 'index.html';
+        }
+
+        function join() {
+            window.location.href = 'chat_new.html';
         }
     </script> 
 </body>

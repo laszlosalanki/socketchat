@@ -7,6 +7,7 @@
 	--success-color: #5cb85c;
 	--error-color: #d9534f;
 	--theme-color: white; 
+	--hover-color: #fff;
 }
 
 * {
@@ -37,6 +38,22 @@ a {
 	color: var(--dark-color-a);
 	border: 0;
 	font-size: 17px;
+	outline: none;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px rgb(172, 172, 172);
+}
+
+.btn:hover {background-color: var(--hover-color)}
+
+.btn:active {
+  background-color: var(--hover-color);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#send-btn {
+    margin-left: 8px;    
 }
 
 .chat-container {
@@ -127,7 +144,7 @@ a {
 
 .chat-messages {
 	padding: 30px;
-	max-height: 500px;
+	max-height: 715px;
 	overflow-y: scroll;
 }
 
@@ -164,10 +181,4 @@ a {
 	padding: 5px;
 	height: 40px;
 	flex: 1;
-	background: var(--theme-color);
-}
-
-#send-btn {
-    margin-left: 5px;
-    
 }
