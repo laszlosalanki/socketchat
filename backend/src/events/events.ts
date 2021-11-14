@@ -13,6 +13,9 @@ import { Server, Socket } from 'socket.io';
 import { Inject } from '@nestjs/common';
 import { TYPES } from '../utilities/types';
 import { AuthService } from '../auth/interfaces/auth.service.interface';
+import { func } from 'joi';
+
+const botName = 'SocketChat Bot';
 
 @WebSocketGateway({ cors: true })
 export class EventsGateway implements OnGatewayConnection, OnGatewayDisconnect {
@@ -43,6 +46,7 @@ export class EventsGateway implements OnGatewayConnection, OnGatewayDisconnect {
     client.broadcast.emit('message', {
       from: client.handshake.auth.username,
       data,
+      time: timeGenerator(),
     });
     return null;
   }
@@ -55,11 +59,31 @@ export class EventsGateway implements OnGatewayConnection, OnGatewayDisconnect {
       client.disconnect(true);
     } else {
       client.handshake.auth.username = user.username;
-      client.broadcast.emit('user-connected', user.username);
+      client.broadcast.emit('user-connected', {
+        from: botName,
+        data: `${user.username} connected`,
+        time: timeGenerator(),
+      });
     }
   }
 
   public async handleDisconnect(client: any): Promise<any> {
-    client.broadcast.emit('user-disconnected', client.handshake.auth.username);
+    client.broadcast.emit('user-disconnected', {
+      from: botName,
+      data: `${client.handshake.auth.username} disconnected`,
+      time: timeGenerator(),
+    });
   }
+
+  
+}
+
+export function timeGenerator() {
+    const currentdate = new Date();
+    if (currentdate.getMinutes() > 9 ) {
+        return currentdate.getHours() + ":" + currentdate.getMinutes();
+    }
+    else {
+        return currentdate.getHours() + ":" + "0" + currentdate.getMinutes();
+    }
 }

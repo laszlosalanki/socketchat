@@ -4,6 +4,9 @@
 	--dark-color-a: #d8a445;
 	--dark-color-b: #e6bf72;
 	--light-color: #fff4df;
+    --success-color: #5cb85c;
+	--error-color: #d9534f;
+    --hover-color: #fff;
 }
 
 * {
@@ -77,6 +80,10 @@ a {
 	margin-bottom: 5px;
 }
 
+.join-main #lang {
+    padding-top: 2px;
+}
+
 .join-main input[type='text'] {
     font-size: 16px;
     padding: 5px;
@@ -91,11 +98,26 @@ a {
     width: 100%;
 }
 
-.join-main #j-btn {
+.join-main #j-btn, #lo-btn {
     margin-top: 20px;
     width: 100%;
 }
 
 .join-main #c-btn {
     margin-bottom: 20px;
+}
+
+.btn {
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px rgb(172, 172, 172);
+}
+
+.btn:hover {background-color: var(--hover-color)}
+
+.btn:active {
+  background-color: var(--hover-color);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }

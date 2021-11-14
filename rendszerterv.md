@@ -24,8 +24,8 @@ Rendszerterv
     
     - Frontend: Csirák Dávid
       - Szerepkör: 
-        - Bejelntkező felület létrehozása
-        - Regisztráció felület létrehozáa
+        - Bejelentkező felület létrehozása
+        - Regisztráció felület létrehozása
         - Chat felület létrehozása
 
   - Mérföldkövek:
@@ -36,7 +36,7 @@ Rendszerterv
     5. API endpointok létrehozása
     6. A chat szerver létrehozása
     7. Az alkalmazás tesztelése
-    8. Az 1.0 -ás verzió kiadása
+    8. Az 1.0 verzió kiadása
   
 4. Követelmények
 
@@ -65,9 +65,9 @@ Rendszerterv
         - Üzenetek küldési idejének megjelenítése
 
     3. Fordítás
-        - Preferrált nyelv beállítása (ki/be kapcsolása)
+        - preferált nyelv beállítása (ki/be kapcsolása)
         - A szoba alapértelmezett nyelve alapján történő fordítás
-        - A fordítás alapértemezetten be legyen kapcsolva
+        - A fordítás alapértelmezetten be legyen kapcsolva
         - Figyelmeztetés a fordítás bekapcsolásánál (csak az adott felhasználónak) (ki/be kapcsolása)
         - A fordítási beállítás elmentése az adatbázisban
 
@@ -96,12 +96,29 @@ Rendszerterv
         - Bejelentkezéskor megjelenik a csatlakozó felhasználó neve a chat felületen
       - Regisztráció
         - Felhasználónév - jelszó - ismételt jelszó 
-      - Üzenet küldés
-        - Az elküldött üzenet a küldőnek illetve mindenki másnak is megjelenjen
+      - Chat szoba kezelő felület
+        - TextBox: új szoba létrehozásához megadható a szoba neve
+        - Dropdown list: az új szoba preferált nyelve
+        - Button: szoba létrehozása és csatlakozás
+        - Dropdown list: meglévő szobák listája
+        - Button: csatlakozás a kiválasztott szobához
+      - Chat szoba felület
+        - Szoba résztvevőinek megjelenítése
+        - Szoba nevének megjelenítése
+        - Szoba alapértelmezett nyelvének megjelenítése
+        - Fordítás beállító felület
+        - Kijelentkező gomb
+        - Szoba elhagyása gomb
+        - Elküldött üzenetek megjelenítése
+        - Beviteli mező az elküldendő üzenetnek
+        - Üzenet küldése gomb
+        - Háttér választó felület
       - Kijelentkezés
         - Kijelentkezéskor megjelenik a lecsatlakozó felhasználó neve a chat felületen
-      - Csatlakozott felhasználók listájának megtekinktése belépés után
-        - Folyamatos frissítést igényel
+        - A böngésző visszairányít a bejelentkezési/regisztrációs felületre
+      - Szoba elhagyása
+        - Szoba elhagyásánál megjelenik a szobát elhagyó felhasználó neve a chat felületen
+        - A böngésző visszairányít a chat szoba kezelő felületre
 
 9. Adatbázis terv
 
@@ -122,7 +139,7 @@ Rendszerterv
 
 11. Tesztterv
 
-    A fejlesztési folyamat során kiemelt szerepe volt a tesztelésnek. Mind a backend, mind a frontend részen fontos volt, hogy az adott funkció tökéletesen müködjön. Itt alkalmaztunk black box és white box tesztelést.
+    A fejlesztési folyamat során kiemelt szerepe volt a tesztelésnek. Mind a backend, mind a frontend részen fontos volt, hogy az adott funkció tökéletesen működjön. Itt alkalmaztunk black box és white box tesztelést.
 
 12. Telepítési terv
 
@@ -130,5 +147,5 @@ Rendszerterv
 
 13. Karbantartási terv
   
-    Felhasználói visszajelzésekre a hibákat minnél hamarabb javítjuk. A projekt függőségeit a lehető legújabb, illetve legbiztonágosabb verzióra frissítjük. Ha egy függőség sebezhetőséget tartalmaz, azonnali frissítést igényel.
+    Felhasználói visszajelzésekre a hibákat minél hamarabb javítjuk. A projekt függőségeit a lehető legújabb, illetve legbiztonságosabb verzióra frissítjük. Ha egy függőség sebezhetőséget tartalmaz, azonnali frissítést igényel.
   

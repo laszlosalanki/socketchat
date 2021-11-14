@@ -13,17 +13,25 @@
             <img src="logo.svg"/><h1>SocketChat</h1>
         </header>
         <main class="join-main">
-            <form action="chat.html">
+            <form action="chat_new.html">
                 <div class="form-control">
-                    <label for="new-room">*New Room</label>
+                    <label for="new-room">New Room</label>
                     <input
                         type="text"
                         name="new-room"
                         id="new-room"
                         placeholder="Enter room name"
                     />
+                    <label for="languages" id="lang">Choose a language:</label>
+                    <select>
+                        <option value="english">English</option>
+                        <option value="hungarian">Hungarian</option>
+                        <option value="german">German</option>
+                        <option value="france">France</option>
+                        <option value="else">...</option>
+                    </select>
                 </div>
-                <button type="submit" class="btn" id="c-btn">Create Room</button>
+                <button type="button" class="btn" id="c-btn">Create Room</button>
                 <div class="form-control">
                     <label for="room">Select Room</label>
                     <select name="room" id="room" required>
@@ -32,11 +40,23 @@
 						<option value="PHP">Room 3</option>
 						<option value="C#">Room 4</option>
 						<option value="Java">Room 5</option>
+                        <option value="other">...</option>
                     </select>
                 </div>
-                <button type="submit" class="btn" id="j-btn">Join Chat</button>
+                <button type="submit" class="btn" id="j-btn" onclick="join()">Join Chat</button>
+                <button type="button" class="btn" id="lo-btn" onclick="logOut()">Log Out</button>
             </form>
         </main>
     </div>
+
+    <script>
+        function logOut() {
+            window.location.href = 'index.html';
+        }
+
+        function join() {
+            window.location.href = 'chat_new.html';
+        }
+    </script> 
 </body>
 </html>
