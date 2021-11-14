@@ -1,18 +1,23 @@
 import {
   Body,
-  Controller, Get,
+  Controller,
+  Get,
   HttpCode,
   Inject,
   Post,
-  Query, Render,
+  Query,
+  Render,
+  Req,
+  UseGuards,
 } from '@nestjs/common';
-import { TYPES } from '../utilities/types';
-import { UserService } from './interfaces/user.service.interface';
-import { userSchema } from './schemas/user.schema';
-import { UserModel } from './models/user.schema';
-import { PasswordMismatchException } from '../exception/password-mismatch.exception';
+import { TYPES } from '../../utilities/types';
+import { UserService } from '../interfaces/user.service.interface';
+import { userSchema } from '../schemas/user.schema';
+import { UserModel } from '../models/user.schema';
+import { PasswordMismatchException } from '../../exception/password-mismatch.exception';
 import { log } from 'util';
-import { AuthService } from '../auth/interfaces/auth.service.interface';
+import { AuthService } from '../../auth/interfaces/auth.service.interface';
+import { AuthGuard } from '@nestjs/passport';
 
 interface RegistrationData {
   username: string;
@@ -50,10 +55,10 @@ export class UserController {
       throw new PasswordMismatchException();
     }
 
-    return this.userService.create(
-      registrationData.username,
-      registrationData.password,
-    );
+    return this.userService.create({
+      username: registrationData.username,
+      password: registrationData.password,
+    });
   }
 
   @Post('/login')
