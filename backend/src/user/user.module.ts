@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { UserController } from './user.controller';
+import { UserController } from './controllers/user.controller';
 import { UserServiceImpl } from './user.service';
 import { TYPES } from '../utilities/types';
 import { ConfigModule } from '@nestjs/config';
@@ -7,6 +7,12 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { UserModel, UserSchema } from './models/user.schema';
 import { UserRepository } from './user.repository';
 import { AuthModule } from '../auth/auth.module';
+import { GoogleAuthStrategy } from '../auth/strategies/google-auth.strategy';
+import { UserGoogleController } from './controllers/user.google-controller';
+import { GithubAuthStrategy } from '../auth/strategies/github-auth.strategy';
+import { UserGitHubController } from './controllers/user.github-controller';
+import { UserGitLabController } from './controllers/user.gitlab-controller';
+import { GitLabAuthStrategy } from '../auth/strategies/gitlab-auth.strategy';
 
 const userService = {
   useClass: UserServiceImpl,
@@ -24,7 +30,18 @@ const userRepository = {
     ConfigModule,
     MongooseModule.forFeature([{ name: UserModel.name, schema: UserSchema }]),
   ],
-  controllers: [UserController],
-  providers: [userService, userRepository],
+  controllers: [
+    UserController,
+    UserGoogleController,
+    UserGitHubController,
+    UserGitLabController,
+  ],
+  providers: [
+    userService,
+    userRepository,
+    GithubAuthStrategy,
+    GoogleAuthStrategy,
+    GitLabAuthStrategy,
+  ],
 })
 export class UserModule {}

@@ -14,14 +14,21 @@ export class UserServiceImpl implements UserService {
     private readonly userRepository: UserRepository,
   ) {}
 
-  public async create(username: string, password: string): Promise<void> {
+  public async create(userData: any): Promise<void> {
+    const { username, email, password } = userData;
+
     if (await this.userRepository.exists({ username })) {
       throw new UserExistsException();
     }
 
     const user = new UserModel();
     user.username = username;
-    user.password = await UserServiceImpl.hash(password);
+
+    if (!email) {
+      user.password = await UserServiceImpl.hash(password);
+    } else {
+      user.email = email;
+    }
 
     return this.userRepository.create(<UserModel & Document>user);
   }
@@ -35,7 +42,15 @@ export class UserServiceImpl implements UserService {
       throw new InvalidCredentialsException();
     }
 
+    if (user.email) {
+      throw new InvalidCredentialsException();
+    }
+
     return user;
+  }
+
+  public async findUser(filter: any): Promise<any> {
+    return await this.userRepository.find(filter);
   }
 
   private static hash(password: string): Promise<string> {
