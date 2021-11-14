@@ -29,6 +29,17 @@
     </div>
 
     <script>
+        window.onload = (event) => {
+            var url = new URL(window.location.href);
+            var token = url.searchParams.get("token");
+
+            var { username } = parseJwt(token);
+
+            onLogin(username, token);
+        };
+    </script>
+
+    <script>
         var x = document.getElementById("login");
         var y = document.getElementById("register");
         var z = document.getElementById("btn");
@@ -44,10 +55,13 @@
             y.style.left = "450px";
             z.style.left = "0px";
         }
+
+        function parseJwt (token) {
+            return JSON.parse(atob(token.split('.')[1]));
+        };
     </script>
 
     <script>
-
         async function login() {
 
             let credentials = {
@@ -55,7 +69,7 @@
             password: document.getElementById('password-input').value
             };
 
-            let result = await fetch("http://localhost:3000/login?lang=hu", {
+            let result = await fetch("/login?lang=hu", {
                 method: "POST",
                 body: JSON.stringify(credentials),
                 headers: {
@@ -70,12 +84,14 @@
                 alert(message);
             } else {
                 let token = jsonResponse.token;
-                window.sessionStorage.setItem("token", token);
-                window.sessionStorage.setItem("name", credentials.username);
-                window.location.href = "join.html";
+                onLogin(credentials.username, token);
             }
+        }
 
-
+         function onLogin(username, token) {
+            window.sessionStorage.setItem("token", token);
+            window.sessionStorage.setItem("name", username);
+            window.location.href = "join.html";
         }
 
         async function register() {
@@ -86,7 +102,7 @@
                 password2: document.getElementById('password-input2-reg').value
             };
 
-            let result = await fetch("http://localhost:3000/register?lang=hu", {
+            let result = await fetch("/register?lang=hu", {
                 method: "POST",
                 body: JSON.stringify(credentials),
                 headers: {

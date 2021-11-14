@@ -22,7 +22,7 @@
 
         async function logout() {
 
-            await fetch("http://localhost:3000/logout", {
+            await fetch("/logout", {
                 method: "POST",
                 body: JSON.stringify({
                     token: window.sessionStorage.getItem("token")

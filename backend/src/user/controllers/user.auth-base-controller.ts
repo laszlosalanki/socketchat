@@ -1,4 +1,4 @@
-import { Req } from '@nestjs/common';
+import { Req, Res } from '@nestjs/common';
 import { UserService } from '../interfaces/user.service.interface';
 import { AuthService } from '../../auth/interfaces/auth.service.interface';
 
@@ -14,7 +14,7 @@ export abstract class UserAuthBaseController {
 
   protected async auth() {}
 
-  protected async authRedirect(@Req() request): Promise<LoginResult> {
+  protected async authRedirect(@Req() request, @Res() response) {
     const { user } = request;
 
     const dbUser = await this.userService.findUser({ email: user.email });
@@ -33,8 +33,10 @@ export abstract class UserAuthBaseController {
         password: null,
       });
     }
-    return {
-      token: await this.authService.createAuthToken(username),
-    };
+    response.redirect(
+      `${request.protocol}://${
+        request.headers.host
+      }?token=${await this.authService.createAuthToken(username)}`,
+    );
   }
 }
