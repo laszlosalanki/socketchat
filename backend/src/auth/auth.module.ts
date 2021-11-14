@@ -3,6 +3,10 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { JwtModule } from '@nestjs/jwt';
 import { AuthServiceImpl } from './auth.service';
 import { TYPES } from '../utilities/types';
+import { PassportModule } from '@nestjs/passport';
+import { GoogleAuthStrategy } from './strategies/google-auth.strategy';
+import { GithubAuthStrategy } from './strategies/github-auth.strategy';
+import { GitLabAuthStrategy } from './strategies/gitlab-auth.strategy';
 
 const AuthService = {
   provide: TYPES.AuthService,
@@ -12,6 +16,7 @@ const AuthService = {
 @Module({
   imports: [
     ConfigModule,
+    PassportModule,
     JwtModule.registerAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
@@ -28,7 +33,12 @@ const AuthService = {
       },
     }),
   ],
-  providers: [AuthService],
+  providers: [
+    AuthService,
+    GoogleAuthStrategy,
+    GithubAuthStrategy,
+    GitLabAuthStrategy,
+  ],
   exports: [AuthService],
 })
 export class AuthModule {}
