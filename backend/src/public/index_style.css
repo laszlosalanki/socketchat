@@ -6,6 +6,17 @@
     font-family: 'Roboto', sans-serif;
 }
 
+.social-icons {
+    margin: 30px auto;
+    text-align: center;
+}
+
+.social-icons a{
+    color: black;
+    margin: 0 12px;
+    cursor: pointer;
+}
+
 h1 {
     display: flex;
     align-items: center;
