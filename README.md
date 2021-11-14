@@ -5,9 +5,9 @@ Egyszerű valós idejű chat alkalmazás, [NestJS](https://nestjs.com/) és [Soc
 Az alkalmazás a Debreceni Egyetem Szoftverfejlesztési módszertanok tantárgy keretei közt íródott.
 
 Készítők:
-- @K-Daniel98
-- @davidcsirak
-- @laszlosalanki
+- [@K-Daniel98](https://github.com/K-Daniel98)
+- [@davidcsirak](https://github.com/davidcsirak)
+- [@laszlosalanki](https://github.com/laszlosalanki/)
 
 Részletes dokumentáció:
 - [Követelmény specifikáció](https://github.com/laszlosalanki/socketchat/blob/main/kovetelmeny_specifikacio.md)
