@@ -1,9 +1,9 @@
 http:
-  host: 0.0.0.0
-  port: 3000
+  host: 127.0.0.1
+  port: 5000
 
 database:
-  host: db
+  host: 127.0.0.1
   port: 27017
   db: socketchat
   username: root
@@ -12,3 +12,18 @@ database:
 jwt:
   secret: ffc380d8c8a80cfee58441de02889c77
   expiration: 30d
+
+auth:
+  google:
+    client_id: ''
+    client_secret: ''
+    callback_url: 'http://localhost:5000/google/login'
+  github:
+    client_id: ''
+    client_secret: ''
+    callback_url: 'http://localhost:5000/github/login'
+  gitlab:
+    client_id: ''
+    client_secret: ''
+    callback_url: 'http://localhost:5000/gitlab/login'
+
