@@ -13,3 +13,5 @@ Részletes dokumentáció:
 - [Követelmény specifikáció](https://github.com/laszlosalanki/socketchat/blob/main/kovetelmeny_specifikacio.md)
 - [Funkcionális specifikáció](https://github.com/laszlosalanki/socketchat/blob/main/funkcionalis_specifikacio.md)
 - [Rendszerterv](https://github.com/laszlosalanki/socketchat/blob/main/rendszerterv.md)
+
+![Chat](https://github.com/laszlosalanki/socketchat/blob/main/docs/screen/chat.png)
