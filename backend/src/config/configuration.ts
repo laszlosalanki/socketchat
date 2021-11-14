@@ -3,7 +3,12 @@ import * as yaml from 'js-yaml';
 import { join } from 'path';
 
 export default () => {
-  return yaml.load(
-    readFileSync(join(__dirname, 'config.yaml'), 'utf-8'),
-  ) as Record<string, any>;
+  const fileName =
+    process.env.NODE_ENV === 'production'
+      ? 'config.yaml'
+      : 'config.secret.yaml';
+  return yaml.load(readFileSync(join(__dirname, fileName), 'utf-8')) as Record<
+    string,
+    any
+  >;
 };
