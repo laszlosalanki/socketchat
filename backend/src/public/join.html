@@ -15,6 +15,17 @@
         <main class="join-main">
             <form action="chat_new.html">
                 <div class="form-control">
+                    <label for="room">Select Room</label>
+                    <select name="room" id="room" required>
+                        <option value="JavaScript">Room 1 ENG</option>
+						<option value="Python">Room 2 HUN</option>
+						<option value="PHP">Room 3 DE</option>
+						<option value="C#">Room 4 RO</option>
+						<option value="Java">Room 5</option>
+                        <option value="other">...</option>
+                    </select>
+                </div>
+                <div class="form-control">
                     <label for="new-room">New Room</label>
                     <input
                         type="text"
@@ -32,17 +43,6 @@
                     </select>
                 </div>
                 <button type="button" class="btn" id="c-btn">Create Room</button>
-                <div class="form-control">
-                    <label for="room">Select Room</label>
-                    <select name="room" id="room" required>
-                        <option value="JavaScript">Room 1</option>
-						<option value="Python">Room 2</option>
-						<option value="PHP">Room 3</option>
-						<option value="C#">Room 4</option>
-						<option value="Java">Room 5</option>
-                        <option value="other">...</option>
-                    </select>
-                </div>
                 <button type="submit" class="btn" id="j-btn" onclick="join()">Join Chat</button>
                 <button type="button" class="btn" id="lo-btn" onclick="logOut()">Log Out</button>
             </form>
