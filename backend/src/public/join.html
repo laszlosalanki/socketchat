@@ -15,6 +15,17 @@
         <main class="join-main">
             <form action="chat_new.html">
                 <div class="form-control">
+                    <label for="room">Select Room</label>
+                    <select name="room" id="room" required>
+                        <option value="JavaScript">Room 1 ENG</option>
+						<option value="Python">Room 2 HUN</option>
+						<option value="PHP">Room 3 DE</option>
+						<option value="C#">Room 4 RO</option>
+						<option value="Java">Room 5</option>
+                        <option value="other">...</option>
+                    </select>
+                </div>
+                <div class="form-control">
                     <label for="new-room">New Room</label>
                     <input
                         type="text"

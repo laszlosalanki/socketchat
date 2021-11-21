@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>SocketChat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
     <link rel="stylesheet" href="index_style.css">
 </head>
 <body>
@@ -13,6 +14,11 @@
                 <div id="btn"></div>
                 <button type="button" class="toggle-btn" onclick="loginPosition()">Log In</button>
                 <button type="button" class="toggle-btn" onclick="registerPosition()">Register</button>
+            </div>
+            <div class="social-icons">
+                <a href="/google/login"><i class="fab fa-google fa-2x"></i></a>
+                <a href="/github/login"><i class="fab fa-github fa-2x"></i></a>
+                <a href="/gitlab/login"><i class="fab fa-gitlab fa-2x"></i></a>
             </div>
             <div id="login" class="input-group">
                 <input type="text" id="username-input" class="input-field" placeholder="Username" required />
