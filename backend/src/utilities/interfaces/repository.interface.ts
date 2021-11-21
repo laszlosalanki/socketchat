@@ -4,4 +4,5 @@ export interface Repository<T> {
   create(instance: T): Promise<any>;
   update(...args: [instance: T] | [userId: any, data: any]): Promise<any>;
   delete(instance: T): Promise<any>;
+  findAll(): Promise<Array<T>>;
 }

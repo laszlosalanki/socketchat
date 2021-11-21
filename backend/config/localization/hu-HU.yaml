@@ -10,3 +10,7 @@ exception:
     message: A felhasználónévnek legalább 4 karakterből kell állnia, nem lehet hoszabb 30 karakternél, csak betüket, számokat, aláhúzást és kötőjelet tartalmazhat!
   user_exists:
     message: Ez a felhasználónév már foglalt!
+  room_exists:
+    message: A megadott név már használatban van!
+  room_not_found:
+    message: A megadott szoba nem létezik vagy nincs joga törölni!

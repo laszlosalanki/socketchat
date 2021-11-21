@@ -33,6 +33,9 @@ export abstract class UserAuthBaseController {
         password: null,
       });
     }
+
+    // behind proxy: request.headers['x-forwarded-proto'], request.headers['x-forwarded-host']
+
     response.redirect(
       `${request.protocol}://${
         request.headers.host

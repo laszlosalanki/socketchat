@@ -23,24 +23,18 @@
                         placeholder="Enter room name"
                     />
                     <label for="languages" id="lang">Choose a language:</label>
-                    <select>
-                        <option value="english">English</option>
-                        <option value="hungarian">Hungarian</option>
-                        <option value="german">German</option>
-                        <option value="france">France</option>
+                    <select id='languages'>
+                        <option value="EN">English</option>
+                        <option value="HU">Hungarian</option>
+                        <option value="DE">German</option>
+                        <option value="FR">France</option>
                         <option value="else">...</option>
                     </select>
                 </div>
-                <button type="button" class="btn" id="c-btn">Create Room</button>
+                <button type="button" class="btn" id="c-btn" onclick='onCreateRoomButton()'>Create Room</button>
                 <div class="form-control">
                     <label for="room">Select Room</label>
-                    <select name="room" id="room" required>
-                        <option value="JavaScript">Room 1</option>
-						<option value="Python">Room 2</option>
-						<option value="PHP">Room 3</option>
-						<option value="C#">Room 4</option>
-						<option value="Java">Room 5</option>
-                        <option value="other">...</option>
+                    <select name="room-name" id="room" required>
                     </select>
                 </div>
                 <button type="submit" class="btn" id="j-btn" onclick="join()">Join Chat</button>
@@ -50,13 +44,86 @@
     </div>
 
     <script>
+
+        window.addEventListener('load', () => {
+            loadRooms();
+        });
+
+        function loadRooms() {
+
+            const roomSelect = document.getElementById('room');
+            roomSelect.length = 0;
+
+            fetch('/room', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(async (response) => {
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.message)
+                }
+                return response.json();
+            })
+              .then((response) => {
+                  response.map((room) => addRoom(roomSelect, room));
+              })
+            .catch(error => alert(error));
+        }
+
+        function addRoom(roomSelect, room) {
+            const option = document.createElement("option");
+            option.text = room.name;
+            option.value = room.name;
+
+            roomSelect.add(option);
+        }
+
+        function onCreateRoomButton() {
+            const roomName = document.getElementById('new-room').value;
+            const defaultLanguage = document.getElementById('languages').value;
+
+            if (!roomName) {
+                return; // invalid!
+            }
+
+            if (!defaultLanguage) {
+                return; // invalid!
+            }
+
+            fetch('/room',{
+                headers: {
+                    'Authorization': `Bearer ${window.sessionStorage.getItem('token')}`,
+                    'Content-Type': 'application/json'
+                },
+                method: 'POST',
+                body: JSON.stringify({
+                    room_name: roomName,
+                    default_language: defaultLanguage
+                })
+            })
+            .then(async response => {
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.message)
+                }
+
+                const roomSelect = document.getElementById('room');
+                addRoom(roomSelect, {name: roomName});
+            })
+              .then(() => alert('A szoba sikeresen létre lett hozva!'))
+            .catch(error => alert(error));
+        }
+
         function logOut() {
             window.location.href = 'index.html';
         }
 
         function join() {
-            window.location.href = 'chat_new.html';
+            // window.location.href = 'chat_new.html?roomName=tt';
         }
-    </script> 
+    </script>
 </body>
 </html>

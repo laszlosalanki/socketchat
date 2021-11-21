@@ -4,6 +4,7 @@ import {
   Get,
   HttpCode,
   Inject,
+  Patch,
   Post,
   Query,
   Render,
@@ -18,6 +19,7 @@ import { PasswordMismatchException } from '../../exception/password-mismatch.exc
 import { log } from 'util';
 import { AuthService } from '../../auth/interfaces/auth.service.interface';
 import { AuthGuard } from '@nestjs/passport';
+import { UpdatePersonalizationDto } from '../dto/update-personalization.dto';
 
 interface RegistrationData {
   username: string;
@@ -59,6 +61,21 @@ export class UserController {
       username: registrationData.username,
       password: registrationData.password,
     });
+  }
+
+  @Patch('/personalization')
+  @HttpCode(200)
+  @UseGuards(AuthGuard('jwt'))
+  private async updatePersonalization(
+    @Req() request,
+    @Body() personalizationDto: UpdatePersonalizationDto,
+  ) {
+    const user: UserModel = await this.userService.findUser({
+      username: request.user.username,
+    });
+    user.personalization.background = personalizationDto.backgroundColor;
+
+    await this.userService.update(user);
   }
 
   @Post('/login')

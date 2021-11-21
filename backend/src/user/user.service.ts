@@ -56,4 +56,8 @@ export class UserServiceImpl implements UserService {
   private static hash(password: string): Promise<string> {
     return bcrypt.hash(password, 10);
   }
+
+  public async update(user: any): Promise<void> {
+    await this.userRepository.update(user);
+  }
 }

@@ -11,12 +11,15 @@ services:
       - network
     depends_on:
       - db
+    environment:
+      - NODE_ENV=development
   db:
     build:
       context: ./mongodb
       dockerfile: Dockerfile
+    command: mongod --port 28017
     ports:
-      - 127.0.0.1:27017:27017
+      - 127.0.0.1:28017:28017
     networks:
       - network
 networks:

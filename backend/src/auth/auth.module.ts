@@ -7,6 +7,7 @@ import { PassportModule } from '@nestjs/passport';
 import { GoogleAuthStrategy } from './strategies/google-auth.strategy';
 import { GithubAuthStrategy } from './strategies/github-auth.strategy';
 import { GitLabAuthStrategy } from './strategies/gitlab-auth.strategy';
+import { JwtStrategy } from './strategies/jwt.strategy';
 
 const AuthService = {
   provide: TYPES.AuthService,
@@ -38,6 +39,7 @@ const AuthService = {
     GoogleAuthStrategy,
     GithubAuthStrategy,
     GitLabAuthStrategy,
+    JwtStrategy,
   ],
   exports: [AuthService],
 })

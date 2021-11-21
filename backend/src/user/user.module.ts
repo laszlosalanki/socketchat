@@ -13,6 +13,7 @@ import { GithubAuthStrategy } from '../auth/strategies/github-auth.strategy';
 import { UserGitHubController } from './controllers/user.github-controller';
 import { UserGitLabController } from './controllers/user.gitlab-controller';
 import { GitLabAuthStrategy } from '../auth/strategies/gitlab-auth.strategy';
+import { JwtStrategy } from '../auth/strategies/jwt.strategy';
 
 const userService = {
   useClass: UserServiceImpl,
@@ -42,6 +43,8 @@ const userRepository = {
     GithubAuthStrategy,
     GoogleAuthStrategy,
     GitLabAuthStrategy,
+    JwtStrategy,
   ],
+  exports: [userService],
 })
 export class UserModule {}

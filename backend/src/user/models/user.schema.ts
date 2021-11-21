@@ -15,7 +15,7 @@ export class UserModel {
   public username: string;
   @Prop({ required: false })
   public password: string;
-  @Prop({ required: false, unique: true, default: null })
+  @Prop({ required: false, default: null })
   public email: string;
   @Prop({ required: false, default: 0.0 })
   public spent_time: number;

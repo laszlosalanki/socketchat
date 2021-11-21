@@ -46,4 +46,8 @@ export abstract class RepositoryBase<T> implements Repository<T> {
   public async delete(instance: T): Promise<any> {
     return this.model.deleteOne(instance);
   }
+
+  public async findAll(): Promise<Array<T>> {
+    return this.model.find();
+  }
 }
