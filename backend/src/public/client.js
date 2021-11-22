@@ -9,16 +9,14 @@ const socket = io(window.location.host, {
 });
 
 const chatForm = document.getElementById('chat-form');
-
+const roomNameDiv = document.getElementById('room-name');
 const messageInput = document.getElementById('msg');
 const chatMessages = document.querySelector('.chat-messages');
 
 // Getting roomname from URL
-var roomName = Qs.parse(location.search, {
-  ignoreQueryPrefix: true,
-});
-roomName = roomName.room;
+roomNameAppender();
 
+// Generating greeting text
 botMessageGenerator('Welcome to SocketChat!');
 
 socket.on('message', (data) => {
@@ -49,6 +47,12 @@ socket.on('load-room-data', (roomData) => {
     }),
   );
 });
+
+socket.on('list-users', (users) => {
+  console.log(users);
+  users.map((user) => console.log(user));
+});
+
 //Submiting messages
 // az uzenet iroja szoveget csak itt lehet megjeleniteni
 chatForm.addEventListener('submit', (e) => {
@@ -59,13 +63,7 @@ chatForm.addEventListener('submit', (e) => {
   // appending message on html
   socket.emit('message', message);
 
-  /*var outputMessage = {
-    from: 'You',
-    data: message,
-    time: timeGenerator(),
-  };
-
-  appendMessage(outputMessage); //innen irodik ki a kuldo szovege.*/
+  //appendMessage(outputMessage); //innen irodik ki a kuldo szovege.*/
   chatMessages.scrollTop = chatMessages.scrollHeight;
   messageInput.value = '';
   messageInput.focus();
@@ -125,6 +123,14 @@ function botMessageGenerator(message) {
   };
 
   appendMessage(botMessage);
+}
+
+function roomNameAppender() {
+  var url_string = window.location;
+  var url = new URL(url_string);
+  var roomName = url.searchParams.get("room-name");
+  roomNameDiv.innerHTML = roomName;
+
 }
 
 function joinRoom(roomName) {

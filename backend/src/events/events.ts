@@ -106,6 +106,7 @@ export class EventsGateway implements OnGatewayConnection, OnGatewayDisconnect {
     this.server
       .of('/')
       .sockets.forEach((socket) => users.push(socket.handshake.auth.username));
+      console.log(users);
     client.emit('list-users', users);
     return null;
   }
@@ -172,10 +173,7 @@ export class EventsGateway implements OnGatewayConnection, OnGatewayDisconnect {
       return;
     }
 
-    const translatedMessage = await this.translationService.translate(
-      data,
-      roomData.default_language,
-    );
+    const translatedMessage = data;
 
     await this.chatService.saveMesage(
       translatedMessage,
