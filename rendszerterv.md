@@ -65,11 +65,9 @@ Rendszerterv
         - Üzenetek küldési idejének megjelenítése
 
     3. Fordítás
-        - preferált nyelv beállítása (ki/be kapcsolása)
+        - preferált nyelv beállítása
         - A szoba alapértelmezett nyelve alapján történő fordítás
-        - A fordítás alapértelmezetten be legyen kapcsolva
-        - Figyelmeztetés a fordítás bekapcsolásánál (csak az adott felhasználónak) (ki/be kapcsolása)
-        - A fordítási beállítás elmentése az adatbázisban
+        - A fordítás alapértelmezetten be lesz kapcsolva minden szobaban
 
     4. Felhasználó
         - Háttér állítása
@@ -81,12 +79,9 @@ Rendszerterv
         - Chat szoba kezelési felülete
         - Személyreszabási lehetőségek
 
-    6. (Nem garantált)
-        - Spellcheck?
-
     | Időelosztási terv | 1. hét | 2. hét | 3. hét | 4. hét | 5. hét | 6. hét | 7. hét | 8. hét |
     | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-    | - | 1. feature, 5. feature | 2. feature | 2. feature | 3. feature | 3. feature | 4. feature | tesztelés és 6. feature | bemutatás |
+    | - | 1. feature, 5. feature | 2. feature | 2. feature | 3. feature | 3. feature | 4. feature | tesztelés | bemutatás |
 
 5. Funkcionális terv
 
@@ -106,9 +101,9 @@ Rendszerterv
         - Szoba résztvevőinek megjelenítése
         - Szoba nevének megjelenítése
         - Szoba alapértelmezett nyelvének megjelenítése
-        - Fordítás beállító felület
         - Kijelentkező gomb
         - Szoba elhagyása gomb
+        - Szoba törlése gomb
         - Elküldött üzenetek megjelenítése
         - Beviteli mező az elküldendő üzenetnek
         - Üzenet küldése gomb

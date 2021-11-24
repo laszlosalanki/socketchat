@@ -124,10 +124,8 @@ Funkcionális specifikáció
             - Csatlakozás a létező chat szobákhoz
             - A chat szobában jelen lévő felhasználók megjelenítése
             - Elküldött üzenetek fordítása a szoba alapértelmezett nyelvére
-                - Kikapcsolható felhasználói beállítás 
             - Felhasználói beállítások
                 - Háttér állítása
-                - Fordítás ki/bekapcsolása
                 - Az alkalmazás használata közben eltöltött idő és annak megjelenítése 
         
 8. Megfeleltetés
@@ -167,7 +165,7 @@ Funkcionális specifikáció
     Chat:
     - Szobákban történik a kommunikáció.
     - Külső API használata a fordítások eléréséhez .
-    - Megjeleníti a felhasználók által küldött üzeneteket az alapértelmezett nyelvre lefordítva .(amennyiben be van kapcsolva)
+    - Megjeleníti a felhasználók által küldött üzeneteket az alapértelmezett nyelvre lefordítva.
 
         
 9. Képernyő tervek
@@ -246,25 +244,26 @@ Funkcionális specifikáció
         2. A másik opció egy új chat szoba létrehozás.
     
     Amennyiben a felhasználó be szeretne csatlakozni egy már létező szobába, a csatlakozás gombra kattintva ez a folyamat megtörténik és
-    addig tartózkodik a szobában, amíg vagy ki nem jelentkezik / bezárja a weboldalt, vagy kilép a szobából való kilépésre szolgáló gombbal
+    addig tartózkodik a szobában, amíg vagy ki nem jelentkezik / bezárja a weboldalt, vagy kilép a szobából való kilépésre szolgáló
+    gombbal
     (kilépés a szobából).
     
     Ellenkező esetben, ha új szobát szeretne létrehozni, a szoba nevének megadása után a "Létrehozás" gombra kattintva teheti meg. Egy
-    szoba addig létezik, amíg törlése nem kerül. Létrehozás után nem kerül be automatikusan a szobába, explicit módon kell az előző pontban
+    szoba addig létezik, amíg törlése nem kerül. Létrehozás után nem kerül be automatikusan a szobába, explicit módon kell az előző
+    pontban
     történő leírás alapján csatlakozni.
     
-    A felhasználónak a kezelő felületen kívül megjelenik egy gomb, amely célja a felhasználói beállítások állítása, mint például az
-    elküldött üzenetek automatikus fordításának kikapcsolás, vagy egy tetszőleges háttér beállítása, amellyel tudja személyre szabni a
-    felületét. A háttér állítása során csak annak a felhasználónak változik a háttere, amelyik végrehajtotta a folyamatot, a többi
-    felhasználónál nem történik változás (ezért is személyre szabás).
+    A felhasználónak a kezelő felületen kívül megjelenik egy gomb amely egy tetszőleges háttér beállítása, amellyel tudja személyre
+    szabni a felületét. A háttér állítása során csak annak a felhasználónak változik a háttere, amelyik végrehajtotta a folyamatot, a
+    többi felhasználónál nem történik változás (ezért is személyre szabás).
     
-    Egy szobába való csatlakozás után lehetőség lesz a szoba törlésére, egy arra szolgáló gombbal. Fontos megjegyezni, hogy csak az tudja a
+    Egy szobába való csatlakozás után lehetőség lesz a szoba törlésére, egy arra szolgáló gombbal. Fontos megjegyezni, hogy csak az tudja
+    a
     szobát törölni, aki létrehozta az adott szobát.
     
     A szobának beállításai is vannak, mint például alapértelmezett nyelv állítása. Ez az a nyelv, amelyre az üzenetek alapértelmezetten
-    lefordításra kerülnek, ha egy felhasználó más nyelven küldené az üzenetét. Amennyiben a felhasználó kikapcsolja a saját beállításaiban
-    ezt a fordítást, az elküldött üzenetei nem kerülnek lefordításra se a saját, se más felületén. A fordított szöveg minden felhasználónak
-    láthatóvá válik a szobában.
+    lefordításra kerülnek, ha egy felhasználó más nyelven küldené az üzenetét. A fordított szöveg minden felhasználónak láthatóvá válik a
+    szobában.
     
     Kijelentkezés után az üzenetek nem vesznek el, mivel a szobák üzenetei az adatbázisban tárolásra kerülnek, így ismételt belépés után
     láthatóvá válnak az előzőleg elküldött üzenetek.
@@ -282,7 +281,7 @@ Funkcionális specifikáció
 
     A chat szobák kialakítása miatt szükség lesz egy másik oldalra is, ahol az ide kapcsolódó funkciók érhetők el (bejelentkezés után a szerver ide irányítja át a felhasználót). Egy szövegbeviteli mezőbe írva adhatjuk meg az új szoba nevét, mellette egy DropDownList elemei közül választhatunk preferált nyelvet. Ha nem szeretnénk új szobát létrehozni, akkor kapcsolódhatunk meglévőhöz is, itt is DropDownList segítségével megy a kiválasztás.
 
-    A chat felületen látható lesz az aktuális szoba neve, alatta pedig a felhasználók listája. Jobb oldalon az üzenetek (küldő, küldés ideje, üzenet), alul pedig egy szövegbeviteli mező lesz (ide írhatjuk az elküldeni kívánt üzenetet) egy küldés gombbal; valamint a jobb felső sarokban egy kijelentkezés és szoba elhagyása gombbal. Az automatikus fordítást a szoba preferált nyelvére egy kapcsoló segítségével lehet majd állítani (szintén ezen a felületen), ez alapértelmezetten engedélyezett.
+    A chat felületen látható lesz az aktuális szoba neve, alatta pedig a felhasználók listája. Jobb oldalon az üzenetek (küldő, küldés ideje, üzenet), alul pedig egy szövegbeviteli mező lesz (ide írhatjuk az elküldeni kívánt üzenetet) egy küldés gombbal; valamint a jobb felső sarokban egy kijelentkezés és szoba elhagyása gombbal.
 
     A személyre szabási lehetőségek részeként bekerülő ColorPicker segítségével választhatunk majd háttérszínt.
 
@@ -312,9 +311,6 @@ Funkcionális specifikáció
     Kilépés: Az a folyamat, mely során a felhasználó ki tud lépni az adott szobából majd ezután a szoba kezelő felületre lesz átirányítva.
 
     Helyesírásellenőrző: Ellenőriz minden a szobában leírt szót, majd jelzi hogy ha valamelyik hibásan/ helytelenül lett leírva.
-
-    automatikus fordító: Bekapcsolás esetén minden elküldött üzenetet az adott felhasználó a szoba alapértelmezett nyelvén lát. (Csak az
-    adott felhasználó aki bekapcsolta magának).
 
     Háttérszín változtatás: A felhasználó egy beállított színű hátteret fog látni a szobán belül. (a többi felhasználó ebből semmit nem
     lát) 
