@@ -88,26 +88,48 @@ export class EventsGateway implements OnGatewayConnection, OnGatewayDisconnect {
     client.emit('load-room-data', roomData);
     client.join(data.roomName);
 
+    await this.listUsers(data, client);
+
+    this.server.to(data.roomName).emit('user-connected', {
+      from: botName,
+      data: `${client.handshake.auth.username} connected`,
+      time: timeGenerator(),
+    });
+
     if (
       !this.roomData.some((chatRoomDto) => chatRoomDto.name === data.roomName)
     ) {
       this.roomData.push(roomData);
     }
 
+    client.on('disconnecting', () => {
+      this.server.to(data.roomName).emit('user-disconnected', {
+        from: botName,
+        data: `${client.handshake.auth.username} disconnected`,
+        time: timeGenerator(),
+      });
+    });
+
     return null;
   }
 
   @SubscribeMessage('list-users')
-  private listUsers(
-    @MessageBody() data: string,
+  private async listUsers(
+    @MessageBody() data: any,
     @ConnectedSocket() client: Socket,
   ): Promise<WsResponse<any>> {
-    const users = new Array<string>();
-    this.server
-      .of('/')
-      .sockets.forEach((socket) => users.push(socket.handshake.auth.username));
-      console.log(users);
+    const [roomName] = client.rooms;
+
+    const users = (await this.server.fetchSockets())
+      .filter(
+        (socket) =>
+          socket.rooms.has(roomName) &&
+          socket.handshake.auth.username !== client.handshake.auth.username,
+      )
+      .map((socket) => socket.handshake.auth.username);
+
     client.emit('list-users', users);
+
     return null;
   }
 
@@ -181,22 +203,23 @@ export class EventsGateway implements OnGatewayConnection, OnGatewayDisconnect {
       roomName,
     );
 
-    client.broadcast.emit('message', {
+    this.server.to(roomName).emit('message', {
       from: client.handshake.auth.username,
       data: translatedMessage,
       time: timeGenerator(),
     });
 
-    client.emit('message', {
+    /*client.emit('message', {
       from: 'You',
       data: translatedMessage,
       time: timeGenerator(),
-    });
+    });*/
 
     return null;
   }
 
   public async handleConnection(client: Socket, ...args: any[]): Promise<any> {
+    const [roomname] = client.rooms;
     const token = client.handshake.auth.token;
     const user = await this.authService.verifyAuthToken(token);
     if (!user) {
@@ -206,11 +229,6 @@ export class EventsGateway implements OnGatewayConnection, OnGatewayDisconnect {
         loginTime: Date.now(),
       };
       client.handshake.auth.username = user.username;
-      client.broadcast.emit('user-connected', {
-        from: botName,
-        data: `${user.username} connected`,
-        time: timeGenerator(),
-      });
     }
   }
 
@@ -220,6 +238,8 @@ export class EventsGateway implements OnGatewayConnection, OnGatewayDisconnect {
         return;
       }
 
+      const [roomName] = client.rooms;
+
       const user: UserModel = await this.userService.findUser({
         username: client.handshake.auth.username,
       });
@@ -227,7 +247,7 @@ export class EventsGateway implements OnGatewayConnection, OnGatewayDisconnect {
 
       await this.userService.update(user);
 
-      client.broadcast.emit('user-disconnected', {
+      this.server.to(roomName).emit('user-disconnected', {
         from: botName,
         data: `${client.handshake.auth.username} disconnected`,
         time: timeGenerator(),

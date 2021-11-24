@@ -10,6 +10,7 @@ const socket = io(window.location.host, {
 
 const chatForm = document.getElementById('chat-form');
 const roomNameDiv = document.getElementById('room-name');
+const roomLangDiv = document.getElementById('room-language');
 const messageInput = document.getElementById('msg');
 const chatMessages = document.querySelector('.chat-messages');
 
@@ -28,10 +29,14 @@ socket.on('message', (data) => {
 
 socket.on('user-connected', (data) => {
   appendMessage(data);
+  appendUser(data.data.split(' ')[0]);
+  console.log('konnektnel');
 });
 
 socket.on('user-disconnected', (data) => {
   appendMessage(data);
+  deleteUser(data.data.split(' ')[0]);
+
 });
 
 socket.on('delete-room', () => {
@@ -39,18 +44,20 @@ socket.on('delete-room', () => {
 });
 
 socket.on('load-room-data', (roomData) => {
-  roomData.messages.map((message) =>
+  roomNameAppender(roomData.name,roomData.default_language);
+  roomData.messages.map((message) => {
     appendMessage({
       from: message.created_by,
       data: message.content,
       time: new Date(message.created_at).toLocaleString(),
-    }),
+    })
+  }
   );
 });
 
 socket.on('list-users', (users) => {
-  console.log(users);
-  users.map((user) => console.log(user));
+  users.map((user) => appendUser(user));
+  console.log('listusernel');
 });
 
 //Submiting messages
@@ -104,6 +111,18 @@ function appendMessage(message) {
   document.querySelector('.chat-messages').appendChild(div);
 }
 
+function appendUser(user) {
+  const li = document.createElement('li');
+  li.setAttribute('id', user);
+  li.innerText = user;
+  document.getElementById('users').appendChild(li);
+}
+
+function deleteUser(user) {
+  const userElement = document.getElementById(user);
+  document.getElementById('users').removeChild(userElement);
+}
+
 function timeGenerator() {
   const currentdate = new Date();
   if (currentdate.getMinutes() > 9) {
@@ -125,14 +144,16 @@ function botMessageGenerator(message) {
   appendMessage(botMessage);
 }
 
-function roomNameAppender() {
+function roomNameAppender(roomName, roomLanguage) {
   var url_string = window.location;
   var url = new URL(url_string);
-  var roomName = url.searchParams.get("room-name");
   roomNameDiv.innerHTML = roomName;
-
+  roomLangDiv.innerHTML = roomLanguage;
 }
+
+
 
 function joinRoom(roomName) {
   socket.emit('join-room', { roomName });
 }
+
