@@ -6,7 +6,6 @@ import {
   SubscribeMessage,
   WebSocketGateway,
   WebSocketServer,
-  WsException,
   WsResponse,
 } from '@nestjs/websockets';
 
@@ -134,7 +133,7 @@ export class EventsGateway implements OnGatewayConnection, OnGatewayDisconnect {
   }
 
   @SubscribeMessage('list-rooms')
-  private listrooms(
+  private listRooms(
     @MessageBody() data: string,
     @ConnectedSocket() client: Socket,
   ): Promise<WsResponse<any>> {
@@ -195,7 +194,10 @@ export class EventsGateway implements OnGatewayConnection, OnGatewayDisconnect {
       return;
     }
 
-    const translatedMessage = data;
+    const translatedMessage = await this.translationService.translate(
+      data,
+      roomData.default_language,
+    );
 
     await this.chatService.saveMesage(
       translatedMessage,
@@ -246,12 +248,6 @@ export class EventsGateway implements OnGatewayConnection, OnGatewayDisconnect {
       user.spent_time += Date.now() - client.data.loginTime;
 
       await this.userService.update(user);
-
-      this.server.to(roomName).emit('user-disconnected', {
-        from: botName,
-        data: `${client.handshake.auth.username} disconnected`,
-        time: timeGenerator(),
-      });
     } catch (exception) {
       // handle
     }
