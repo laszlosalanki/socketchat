@@ -34,7 +34,7 @@ A teszteléshez használt böngésző: __Firefox__.
 
 ![Kis ablak, kicsinyített login](test_screen/screen_login.png)
 
-    Kicsinítés nélkül sem tolódik el a háttérkép, és a bejelentkezési panel.
+    Kicsinyítés nélkül sem tolódik el a háttérkép, és a bejelentkezési panel.
 
 ![Kis ablak, sima login](test_screen/screen_login_1.png)
 
